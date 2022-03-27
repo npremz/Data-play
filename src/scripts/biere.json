@@ -1,0 +1,562 @@
+{
+    "biere":[
+        {
+            "id": "1",
+            "name": "Orval",
+            "type": "ambrée",
+            "alcool": "6.2"
+        },
+        {
+            "id": "2",
+            "name": "Chouffe",
+            "type": "blonde",
+            "alcool": "8"
+        },
+        {
+            "id": "3",
+            "name": "Chouffe soleil",
+            "type": "blonde",
+            "alcool": "6"
+        },
+        {
+            "id": "4",
+            "name": "Chouffe Houblon",
+            "type": "blonde",
+            "alcool": "9"
+        },
+        {
+            "id": "5",
+            "name": "N'ice Chouffe",
+            "type": "brune",
+            "alcool": "10"
+        },
+        {
+            "id": "8",
+            "name": "Maes",
+            "type": "blonde",
+            "alcool": "5.2"
+        },
+        {
+            "id": "9",
+            "name": "Maes 0,0",
+            "type": "blonde",
+            "alcool": "0"
+        },
+        {
+            "id": "10",
+            "name": "Maes Radler",
+            "type": "blonde",
+            "alcool": "2"
+        },
+        {
+            "id": "11",
+            "name": "Blanche de Namur",
+            "type": "blonde",
+            "alcool": "4.5"
+        },
+        {
+            "id": "12",
+            "name": "Dupont Saison",
+            "type": "blonde",
+            "alcool": "6.5"
+        },
+        {
+            "id": "13",
+            "name": "Moinette",
+            "type": "blonde",
+            "alcool": "8.5"
+        },
+        {
+            "id": "14",
+            "name": "Waterloo Triple",
+            "type": "blonde",
+            "alcool": "8"
+        },
+        {
+            "id": "15",
+            "name": "Gordon",
+            "type": "Scotch",
+            "alcool": "8"
+        },
+        {
+            "id": "16",
+            "name": "Triple d'Anvers",
+            "type": "blonde",
+            "alcool": "8"
+        },
+        {
+            "id": "17",
+            "name": "Lindemans Pomme",
+            "type": "Fruité",
+            "alcool": "4"
+        },
+        {
+            "id": "18",
+            "name": "Linedemans Cassis",
+            "type": "Fruité",
+            "alcool": "3.5"
+        },
+        {
+            "id": "19",
+            "name": "Lupulus Blanche",
+            "type": "Blanche",
+            "alcool": "4.5"
+        },
+        {
+            "id": "20",
+            "name": "Lupulus Organicus",
+            "type": "blonde",
+            "alcool": "8"
+        },
+        {
+            "id": "21",
+            "name": "Lupulus Fructus",
+            "type": "fruité",
+            "alcool": "4.2"
+        },
+        {
+            "id": "22",
+            "name": "Lupulus Opera",
+            "type": "Ambrée",
+            "alcool": "6"
+        },
+        {
+            "id": "23",
+            "name": "Lupulus hibernatus",
+            "type": "Dark",
+            "alcool": "9.5"
+        },
+        {
+            "id": "24",
+            "name": "Mobius",
+            "type": "Blonde",
+            "alcool": "6.5"
+        },
+        {
+            "id": "25",
+            "name": "Duvel",
+            "type": "blonde",
+            "alcool": "8.5"
+        },
+        {
+            "id": "26",
+            "name": "Duvel Triple Hop Citra",
+            "type": "blonde",
+            "alcool": "9.5"
+        },
+        {
+            "id": "27",
+            "name": "Duvel Triple Hop Cashmere",
+            "type": "blonde",
+            "alcool": "9.5"
+        },
+        {
+            "id": "28",
+            "name": "Trappe White",
+            "type": "blanche",
+            "alcool": "5.5"
+        },
+        {
+            "id": "29",
+            "name": "Trappe Blonde",
+            "type": "blonde",
+            "alcool": "6.5"
+        },
+        {
+            "id": "30",
+            "name": "Trappe Double",
+            "type": "brune",
+            "alcool": "7"
+        },
+        {
+            "id": "31",
+            "name": "Trappe Triple",
+            "type": "blonde",
+            "alcool": "8"
+        },
+        {
+            "id": "32",
+            "name": "Trappe Quadrupple",
+            "type": "Ambrée",
+            "alcool": "10"
+        },
+        {
+            "id": "33",
+            "name": "Chimay Rouge",
+            "type": "Rouge",
+            "alcool": "7"
+        },
+        {
+            "id": "34",
+            "name": "Chimay Blanche",
+            "type": "blonde",
+            "alcool": "8"
+        },
+        {
+            "id": "35",
+            "name": "Chimay Bleue",
+            "type": "brune",
+            "alcool": "9"
+        },
+        {
+            "id": "36",
+            "name": "Westmalle Double",
+            "type": "brune",
+            "alcool": "7.5"
+        },
+        {
+            "id": "37",
+            "name": "Westmalle Triple",
+            "type": "blonde",
+            "alcool": "9.5"
+        },
+        {
+            "id": "38",
+            "name": "La Chatte",
+            "type": "blonde",
+            "alcool": "6"
+        },
+        {
+            "id": "39",
+            "name": "Black Mamba",
+            "type": "dark",
+            "alcool": "4.5"
+        },
+        {
+            "id": "40",
+            "name": "Valduc Rio",
+            "type": "blonde",
+            "alcool": "8"
+        },
+        {
+            "id": "41",
+            "name": "Triple Karmelite",
+            "type": "blonde",
+            "alcool": "8.4"
+        },
+        {
+            "id": "42",
+            "name": "Jupiler",
+            "type": "blonde",
+            "alcool": "5.2"
+        },
+        {
+            "id": "43",
+            "name": "Carlsberg",
+            "type": "blonde",
+            "alcool": "5"
+        },
+        {
+            "id": "44",
+            "name": "Somersby Pomme",
+            "type": "cidre",
+            "alcool": "4.5"
+        },
+        {
+            "id": "45",
+            "name": "Somersby Mûre",
+            "type": "cidre",
+            "alcool": "4.5"
+        },
+        {
+            "id": "46",
+            "name": "Somersby Sparkling Sprikz",
+            "type": "cidre",
+            "alcool": "4.5"
+        },
+        {
+            "id": "47",
+            "name": "Heineken",
+            "type": "blonde",
+            "alcool": "5"
+        },
+        {
+            "id": "48",
+            "name": "Delirium Red",
+            "type": "fruité",
+            "alcool": "8"
+        },
+        {
+            "id": "49",
+            "name": "Delirium Tremens",
+            "type": "blonde",
+            "alcool": "8.5"
+        },
+        {
+            "id": "50",
+            "name": "Leffe Blonde",
+            "type": "blonde",
+            "alcool": "6.6"
+        },
+        {
+            "id": "51",
+            "name": "Leffe Brune",
+            "type": "brune",
+            "alcool": "6.5"
+        },
+        {
+            "id": "52",
+            "name": "Leffe Ambrée",
+            "type": "ambrée",
+            "alcool": "6.5"
+        },
+        {
+            "id": "53",
+            "name": "Leffe Blonde 0,0",
+            "type": "blonde",
+            "alcool": "0"
+        },
+        {
+            "id": "54",
+            "name": "Leffe Triple",
+            "type": "blonde",
+            "alcool": "8.5"
+        },
+        {
+            "id": "55",
+            "name": "Leffe Rituel",
+            "type": "blonde",
+            "alcool": "9"
+        },
+        {
+            "id": "56",
+            "name": "Leffe Ruby",
+            "type": "fruité",
+            "alcool": "5"
+        },
+        {
+            "id": "57",
+            "name": "Stella Artois",
+            "type": "blonde",
+            "alcool": "5.2"
+        },
+        {
+            "id": "58",
+            "name": "Hoegaarden Blanche",
+            "type": "blanche",
+            "alcool": "4.9"
+        },
+        {
+            "id": "59",
+            "name": "Hoegaarden Rosée",
+            "type": "fruité",
+            "alcool": "3"
+        },
+        {
+            "id": "60",
+            "name": "Desperados Original",
+            "type": "blonde", 
+            "alcool": "5.9"
+        },
+        {
+            "id": "61",
+            "name": "Kasteel Rouge",
+            "type": "rouge",
+            "alcool": "8"
+        },
+        {
+            "id": "62",
+            "name": "Kriek Belle-vue",
+            "type": "fruité",
+            "alcool": "4.3"
+        },
+        {
+            "id": "63",
+            "name": "Grimbergen Blanche",
+            "type": "blanche",
+            "alcool": "6"
+        },
+        {
+            "id": "64",
+            "name": "Grimbergen Blonde",
+            "type": "blonde",
+            "alcool": "6.7"
+        },
+        {
+            "id": "65",
+            "name": "Grimbergen Brune",
+            "type": "brune",
+            "alcool": "6.5"
+        },
+        {
+            "id": "66",
+            "name": "Kwak",
+            "type": "ambrée",
+            "alcool": "8.4"
+        },
+        {
+            "id": "67",
+            "name": "Gulden Draak Classique",
+            "type": "rouge",
+            "alcool": "10.5"
+        },
+        {
+            "id": "68",
+            "name": "Pêche Mel Bush",
+            "type": "Ambrée",
+            "alcool": "8.5"
+        },
+        {
+            "id": "69",
+            "name": "Cuvée des Trolls",
+            "type": "blonde",
+            "alcool": "7"
+        },
+        {
+            "id": "70",
+            "name": "Cubastino",
+            "type": "Ambrée",
+            "alcool": "5.9"
+        },
+        {
+            "id": "71",
+            "name": "Corona Extra",
+            "type": "blonde",
+            "alcool": "4.5"
+        },
+        {
+            "id": "72",
+            "name": "Primus",
+            "type": "blonde",
+            "alcool": "5.2"
+        },
+        {
+            "id": "73",
+            "name": "Pêcheresse",
+            "type": "fruité",
+            "alcool": "2.5"
+        },
+        {
+            "id": "74",
+            "name": "Strongbow Gold Apple",
+            "type": "cidre",
+            "alcool": "5"
+        },
+        {
+            "id": "75",
+            "name": "Strongbow Red Berries",
+            "type": "cidre",
+            "alcool": "5"
+        },
+        {
+            "id": "76",
+            "name": "Strongbow Green Elderflower",
+            "type": "cidre",
+            "alcool": "5"
+        },
+        {
+            "id": "77",
+            "name": "Jupiler 0,0",
+            "type": "blonde",
+            "alcool": "0"
+        },
+        {
+            "id": "78",
+            "name": "St. Ubertus Blanche",
+            "type": "blanche",
+            "alcool": "5.2"
+        },
+        {
+            "id": "79",
+            "name": "St. Ubertus Triple Ambrée",
+            "type": "Ambrée",
+            "alcool": "5.2"
+        },
+        {
+            "id": "80",
+            "name": "Lupulus Triple",
+            "type": "blonde",
+            "alcool": "8.5"
+        },
+        {
+            "id": "81",
+            "name": "Houppe",
+            "type": "blonde",
+            "alcool": "7.5"
+        },
+        {
+            "id": "82",
+            "name": "Tangerlo",
+            "type": "blonde",
+            "alcool": "6"
+        },
+        {
+            "id": "83",
+            "name": "Bush Caractère",
+            "type": "ambrée",
+            "alcool": "12"
+        },
+        {
+            "id": "84",
+            "name": "Besos",
+            "type": "blonde",
+            "alcool": "5.9"
+        },
+        {
+            "id": "85",
+            "name": "Duvel 666",
+            "type": "blonde",
+            "alcool": "6.66"
+        },
+        {
+            "id": "86",
+            "name": "Rochefort 6",
+            "type": "blonde",
+            "alcool": "7.5"
+        },
+        {
+            "id": "87",
+            "name": "Rochefort 8",
+            "type": "blonde",
+            "alcool": "9.20"
+        },
+        {
+            "id": "88",
+            "name": "Rochefort 10",
+            "type": "blonde",
+            "alcool": "11.3"
+        },
+        {
+            "id": "89",
+            "name": "Duvel Tripel Hop Citra",
+            "type": "blonde",
+            "alcool": "9.5"
+        },
+        {
+            "id": "90",
+            "name": "Victoria",
+            "type": "blonde",
+            "alcool": "8.5"
+        },
+        {
+            "id": "91",
+            "name": "Maredsous Blonde",
+            "type": "blonde",
+            "alcool": "7.5"
+        },
+        {
+            "id": "92",
+            "name": "Maredsous Triple",
+            "type": "Ambrée",
+            "alcool": "10"
+        },
+        {
+            "id": "93",
+            "name": "Omer",
+            "type": "blonde",
+            "alcool": "8"
+        },
+        {
+            "id": "94",
+            "name": "Waterloo Double Dark",
+            "type": "brune",
+            "alcool": "8"
+        },
+        {
+            "id": "95",
+            "name": "Maredsous Brune",
+            "type": "brune",
+            "alcool": "8"
+        }
+    ]
+}
