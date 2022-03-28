@@ -11,6 +11,7 @@ const search_field = document.querySelector("#search");
 let biereTabl = []
 let barsTabl = []
 let valueBiere = []
+const colors = ["#F6E48F", "#F0AE32", "#7B2020", "#392B1F"]
 
 fetch('scripts/bars.json')
 .then(
@@ -71,7 +72,7 @@ function fetchBiere() {
                         return b.rqr - a.rqr
                     });
                     for (let k = 0; k < valueBiere.length; k++){
-                        addResults(valueBiere[k]);
+                        addResults(valueBiere[k], k);
                     } 
 
 
@@ -122,13 +123,15 @@ function fetchBiere() {
                             }
                         }
 
+
+
                         list.innerHTML = '';
 
                         valueBiere.sort(function (a, b){
                             return b.rqr - a.rqr
                         });
                         for (let k = 0; k < valueBiere.length; k++){
-                            addResults(valueBiere[k]);
+                            addResults(valueBiere[k], k);
                         } 
                     });
 
@@ -144,9 +147,9 @@ function fetchBiere() {
 
 
 
-function addResults(biere) {
+function addResults(biere, idNumber) {
     let result_el = document.createElement('li');
-    result_el.innerHTML = `<div class="boitevignette">
+    result_el.innerHTML = `<div id="${idNumber}"class="boitevignette">
                                 <div class="boitenoms"> 
                                     <p class="nombiere">${biere.name}</p>
                                     <p class="nombar">${biere.barName}</p>
@@ -159,6 +162,16 @@ function addResults(biere) {
                                     <p class="nominfos"><span class="medium">prix/l</span><br><span class="euros">${biere.prix}</span></p>
                                 </div>
                             </div>`;
-    list.append(result_el)
+    list.append(result_el);
+    var elem = document.getElementById(idNumber);
+    if (biere.rqr >= 5) elem.style.backgroundColor = colors[1]
+    if (biere.rqr >= 7.5) {
+        elem.style.backgroundColor = colors[2]
+        elem.style.color = "#f4f4f4"
+    }
+    if (biere.rqr >= 10) {
+        elem.style.backgroundColor = colors[3]
+        elem.style.color = "#f4f4f4"
+    }
 }
 
