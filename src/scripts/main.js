@@ -146,7 +146,19 @@ function fetchBiere() {
 
 function addResults(biere) {
     let result_el = document.createElement('li');
-    result_el.innerHTML = `<b>${biere.name}</b> - ${biere.type} - ${biere.alcool} - ${biere.barName} - ${biere.prix} - <b>${biere.rqr}</b>`;
+    result_el.innerHTML = `<div class="boitevignette">
+                                <div class="boitenoms"> 
+                                    <p class="nombiere">${biere.name}</p>
+                                    <p class="nombar">${biere.barName}</p>
+                                </div>
+                                <p class="rqr">RQR ${biere.rqr}</p>
+                                <img class="emoji" src="assets/images/neutral.svg">
+                                <div class="boiteinfos"> 
+                                    <p class="nominfos"><span class="medium">type</span><br>${biere.type}</p>
+                                    <p class="nominfos"><span class="medium">degré</span><br><span class="percent">${biere.alcool}</span></p>
+                                    <p class="nominfos"><span class="medium">prix/l</span><br><span class="euros">${biere.prix}</span></p>
+                                </div>
+                            </div>`;
     list.append(result_el)
 }
 
