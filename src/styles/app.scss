@@ -1,6 +1,361 @@
 @import 'utils/variables';
 @import 'components/type';
+@import '../../node_modules/modern-normalize/modern-normalize';
 
-.school-img {
-    width: 320px;
+:root {
+    --color-bg: #f4f4f4;
+    --color-bg-offset: #121212;
+    --color-text: #121212;
+    --color-text-offset: #f4f4f4;
+    --color-primary: #121212;
+    --color-secondary: #f4f4f4;
 }
+@media(prefers-color-scheme: dark){
+    :root {
+        --color-bg: #121212;
+        --color-bg-offset: #f4f4f4;
+        --color-text: #f4f4f4;
+        --color-text-offset: #121212;
+        --color-primary: #f4f4f4;
+        --color-secondary: #121212; 
+    }
+}
+[data-theme='light']{
+    --color-bg: #f4f4f4;
+    --color-bg-offset: #121212;
+    --color-text: #121212;
+    --color-text-offset: #f4f4f4;
+    --color-primary: #121212;
+    --color-secondary: #f4f4f4; 
+}
+[data-theme='dark']{
+    --color-bg: #121212;
+    --color-bg-offset: #f4f4f4;
+    --color-text: #f4f4f4;
+    --color-text-offset: #121212;
+    --color-primary: #f4f4f4;
+    --color-secondary: #121212;
+}
+
+body {
+    font-family: neue-haas-grotesk-text, sans-serif;
+    font-size: 16px;
+    line-height: 1.4;
+    font-weight: 400;
+    background-color: var(--color-bg);
+    letter-spacing: 0.2px;
+    color: var(--color-text);
+    overflow-x: hidden;
+}
+
+button {
+    padding: 0;
+    background-color: transparent;
+    margin: 0;
+    border: none;
+}
+
+p {
+    margin: 0;
+}
+
+/*****************************/
+/*     header        */
+
+.header {
+    display: flex;
+    padding: 37px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    justify-content: space-between;
+    position: fixed;
+    right: 0;
+    left: 0;
+    top: 0;
+    background-color: var(--color-bg);
+    z-index: 1;
+
+    &:after {
+        content: "";
+        position: absolute;
+        left: 37px;
+        right: 37px;
+        height: 1px;
+        background-color: var(--color-bg-offset);
+        bottom: 0;
+    }
+
+    &__logo {
+        width: 100px;
+        margin-top: 5px;
+    }
+
+    &__burger-menu {
+        width: 30px;
+    }
+
+    &__svg {
+        height: 20px;
+    }
+
+}
+
+/*****************************/
+/*     conteneurs      */
+
+.conteneur {
+    margin: 37px;
+}
+
+.nav {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    background-color: var(--color-bg);
+    z-index: 10;
+    top: 0;
+    left: 100%;
+}
+
+.boitemain {
+    position: relative;
+    margin-top: 100vh;
+}
+
+.main {
+    position: relative;
+    margin-top: -360px;
+}
+
+.section {
+    padding-top: 80px;
+
+    &--intro {
+        margin-bottom: 57px;
+    }
+}
+
+/*****************************/
+/*     titre     */
+
+.titre {
+    font-family: neue-haas-grotesk-display, sans-serif;
+    text-transform: uppercase;
+    margin: 0;
+
+    &--principal {
+        font-size: 46px;
+        line-height: 45px;
+        letter-spacing: -0.10px;
+        font-weight: 500;
+    }
+
+    &--soustitreprincipal {
+        font-size: 16px;
+        font-weight: 600;
+        margin-top: 37px;
+    }
+
+    &--secondaire {
+        font-size: 22px;
+        font-weight: 500;
+        letter-spacing: -0.10px;
+        text-align: right;
+        position: relative;
+        padding-top: 5px;
+    }
+
+    &--numero {
+        position: absolute;
+        top: -40px;
+        font-size: 32px;
+        font-weight: 600;
+        left: 0;
+    }
+
+    &--soustitre {
+        font-size: 16px;
+        font-weight: 600;
+        margin-top: 37px;
+    }
+
+    &--secondaire:before {
+        content: "";
+        position: absolute;
+        right: 0;
+        left: 0;
+        top: 0;
+        height: 1px;
+        background-color: var(--color-bg-offset);
+    }    
+}
+
+/*****************************/
+/*     titre     */
+
+.paragraphe {
+    margin: 0;
+    margin-top: 37px;
+
+    &--intro{
+        font-size: 14px;
+        margin-top: 5px;
+    }
+}
+
+.hidden {
+    position: relative;
+    border: none;
+    overflow: hidden;
+    display: block;
+    width: 0px;
+    height: 0px;
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+/*****************************/
+/*     boites     */
+
+.boitebiere {
+    height: 500px;
+    display: flex;
+}
+
+.boitevignette {
+    height: 500px;
+    width: 350px;
+    background-color: #f5dd76;
+    border: solid var(--color-bg-offset) 0.5px;
+    padding: 37px;
+    position: relative;
+    text-transform: uppercase;
+
+    .boitenoms {
+        display: flex;
+        position: absolute;
+        left: 37px;
+        right: 37px;
+        top: 37px;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .boiteinfos {
+        display: flex;
+        position: absolute;
+        left: 37px;
+        right: 37px;
+        bottom: 37px;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .nombiere {
+        font-weight: 700;
+        font-size: 22px;
+    }
+
+    .nombar {
+        font-size: 16px;
+        font-weight: 500;
+    }
+
+    .nominfos {
+        font-size: 12px;
+        font-weight: 400;
+    }
+
+    .medium {
+        font-weight: 500;
+    }
+
+    .percent:after {
+        content: "%";
+    }
+
+    .euros:after {
+        content: "€";
+    }
+
+    .rqr {
+        font-size: 200px;
+        font-family: bee,sans-serif;
+        font-weight: 700;
+        letter-spacing: -3px;
+        text-align: center;
+        margin-top: 40px;
+    }
+
+    .emoji {
+        position: absolute;
+        align-items: center;
+        height: 50px;
+        width: 75px;
+    }
+}
+
+
+
+
+
+// Neue Haas Grotesk Display Pro 55 Roman
+
+// font-family: neue-haas-grotesk-display, sans-serif;
+
+// font-weight: 500;
+
+// font-style: normal;
+
+
+// Neue Haas Grotesk Display Pro 65 Medium
+
+// font-family: neue-haas-grotesk-display, sans-serif;
+
+// font-weight: 600;
+
+// font-style: normal;
+
+
+// Neue Haas Grotesk Display Pro 75 Bold
+
+// font-family: neue-haas-grotesk-display, sans-serif;
+
+// font-weight: 700;
+
+// font-style: normal;
+
+
+// Neue Haas Grotesk Text Pro 55 Roman
+
+// font-family: neue-haas-grotesk-text, sans-serif;
+
+// font-weight: 400;
+
+// font-style: normal;
+
+
+// Neue Haas Grotesk Text Pro 65 Medium
+
+// font-family: neue-haas-grotesk-text, sans-serif;
+
+// font-weight: 500;
+
+// font-style: normal;
+
+
+// Neue Haas Grotesk Text Pro 75 Bold
+
+// font-family: neue-haas-grotesk-text, sans-serif;
+
+// font-weight: 700;
+
+// font-style: normal;
+
+// font-family: bee,sans-serif;
+// font-weight: 700;
+// font-style: normal;
