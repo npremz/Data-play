@@ -264,12 +264,14 @@ ul {
     .nombiere {
         font-weight: 700;
         font-size: 22px;
+        flex: 2;
     }
 
     .nombar {
         font-size: 16px;
         font-weight: 500;
         text-align: right;
+        flex: 1;
     }
 
     .nominfos {
