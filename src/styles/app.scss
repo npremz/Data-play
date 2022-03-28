@@ -63,6 +63,10 @@ ul {
     list-style: none;
     padding: 0;
     margin: 0;
+} 
+
+svg {
+    fill: var(--color-bg-offset);
 }
 
 /*****************************/
@@ -228,18 +232,26 @@ ul {
 /*     boites     */
 
 .boitebiere {
-    height: 500px;
-    display: flex;
+    height: 517px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    width: calc(100% + 74px);
+    margin-left: -37px;
+
+    .results {
+        display: flex;
+    }
 }
 
 .boitevignette {
     height: 500px;
-    width: 350px;
+    width: 365px;
     background-color: #f5dd76;
     border: solid var(--color-bg-offset) 0.5px;
     padding: 37px;
     position: relative;
     text-transform: uppercase;
+    color: #121212;
 
     .boitenoms {
         display: flex;
