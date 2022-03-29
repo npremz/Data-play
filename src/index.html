@@ -50,13 +50,17 @@
         <p class="paragraphe paragraphe--intro">Nous sommes l’optimisation parfaite pour tout bon étudiant(e)</p>
       </section>
       <section class="section section--premiere">
-        <h2 class="titre titre--secondaire"><span class="titre--numero">01.</span> Mais qu'est-ce que c'est ?</h2>
+        <h2 class="titre titre--secondaire"><span class="titre--numero">01.</span>
+          <svg class="titre--etoile" viewBox="0 0 595.28 595.28" xmlns="http://www.w3.org/2000/svg"><path d="m595.28 297.64a374.24 374.24 0 0 0 -297.64 297.64 374.24 374.24 0 0 0 -297.64-297.64 374.25 374.25 0 0 0 297.64-297.64 374.25 374.25 0 0 0 297.64 297.64z"/></svg>
+          Mais qu'est-ce<br>que c'est ?</h2>
         <h3 class="titre titre--soustitre">C'est tout d'abord <br>une ambition</h3>
         <p class="paragraphe">L’ambition de pouvoir s’éclater la gueule avec le moins de ressources possible, C’est désormais possible ! Grace à nos scientifique qualifié, nous avons établit un rapport direct entre l’alcoolémie d’une bière et de son prix dans un lieu L.</p>
         <p class="paragraphe">Avec notre outil, vous pouvez rapidement connaitre le RQR de votre bière favorite. Plus le RQR est élevé, plus la race est prometteuse. </p>
       </section>
       <section class="section">
-        <h2 class="titre titre--secondaire"><span class="titre--numero">02.</span>Je teste ma bière</h2>
+        <h2 class="titre titre--secondaire"><span class="titre--numero">02.</span>
+          <svg class="titre--etoile titre--etoile-02" viewBox="0 0 595.28 595.28" xmlns="http://www.w3.org/2000/svg"><path d="m595.28 297.64a374.24 374.24 0 0 0 -297.64 297.64 374.24 374.24 0 0 0 -297.64-297.64 374.25 374.25 0 0 0 297.64-297.64 374.25 374.25 0 0 0 297.64 297.64z"/></svg>
+          Je teste ma bière</h2>
         <input id="search" class="search-biere" type="search" placeholder="Choisi ta bière">
         <div class="boitecategorie">
           <button class="bouton--categorie">Type</button>
@@ -68,22 +72,36 @@
         </div>
       </section>
       <section class="section">
-        <h2 class="titre titre--secondaire"><span class="titre--numero">03.</span> Tu ne trouves pas<br>ta bière ?</h2>
+        <h2 class="titre titre--secondaire"><span class="titre--numero">03.</span> 
+          <svg class="titre--etoile titre--etoile-03" viewBox="0 0 595.28 595.28" xmlns="http://www.w3.org/2000/svg"><path d="m595.28 297.64a374.24 374.24 0 0 0 -297.64 297.64 374.24 374.24 0 0 0 -297.64-297.64 374.25 374.25 0 0 0 297.64-297.64 374.25 374.25 0 0 0 297.64 297.64z"/></svg>
+          Tu ne trouves pas<br>ta bière ?</h2>
         <div class="boitecalcul">
-          <input id="prix" class="info-biere info-biere--prix" type="text" placeholder="Prix ?">
-          <input id="quantite" class="info-biere info-biere--qt" type="text" placeholder="Qt ?">
-          <input id="degre" class="info-biere info-biere--degre" type="text" placeholder="Degré ?">
+          <div class="boitecalculinfo">
+            <input id="prix" class="info-biere info-biere--prix" type="text" placeholder="Prix ?">
+            <span class="unite">€</span>
+          </div>
+          <div class="boitecalculinfo">
+            <input id="quantite" class="info-biere info-biere--qt" type="text" placeholder="Qt ?">
+            <span class="unite">cl</span>
+          </div>
+          <div class="boitecalculinfo">
+            <input id="degre" class="info-biere info-biere--degre" type="text" placeholder="Degré ?">
+            <span class="unite">%</span>
+          </div>
         </div>
-        <p class="rqr">RQR 0,0</p>
-        <button class="bouton--validation">Calculer le RQR</button>
+        <p class="rqr" id="rqrresult">RQR 0,0</p>
+        <button class="bouton bouton--validation">Calculer le RQR</button>
       </section>
       <section class="section">
-        <h2 class="titre titre--secondaire"><span class="titre--numero">04.</span> Une petite<br>moyenne ?</h2>
-        <h3 class="titre titre--soustitre">C'est tout d'abord une ambition</h3>
-        <p class="paragraphe">L’ambition de pouvoir s’éclater la gueule avec le moins de ressources possible.</p>
+        <h2 class="titre titre--secondaire"><span class="titre--numero">04.</span>
+          <svg class="titre--etoile titre--etoile-04" viewBox="0 0 595.28 595.28" xmlns="http://www.w3.org/2000/svg"><path d="m595.28 297.64a374.24 374.24 0 0 0 -297.64 297.64 374.24 374.24 0 0 0 -297.64-297.64 374.25 374.25 0 0 0 297.64-297.64 374.25 374.25 0 0 0 297.64 297.64z"/></svg>
+          Une petite<br>moyenne ?</h2>
+        <h3 class="titre titre--soustitre">Du coup, on se la met où ?</h3>
+        <p class="paragraphe">Grave à notre outil super performant, nous avons pu accès au rapport qualité race des différents bars.</p>
+        <p class="paragraphe">Compare le RQR des bars avec l'outil ci-dessous pour savoir où tu vas boire ce soir !</p>
         <p class="rqr">RQR 0,0</p>
         <small class="barname"></small>
-        <button class="bouton--bar">Choisi ton bar</button>
+        <button class="bouton bouton--bar">Choisi ton bar</button>
       </section>
     </main>
   </div>

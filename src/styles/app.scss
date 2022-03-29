@@ -150,9 +150,13 @@ svg {
 }
 
 .section {
-    padding-top: 80px;
+    padding-top: 130px;
 
+    &--premiere {
+        padding-top: 80px;
+    }
     &--intro {
+        padding-top: 80px;
         margin-bottom: 57px;
     }
 }
@@ -201,6 +205,26 @@ svg {
         margin-top: 37px;
     }
 
+    &--etoile {
+        position: absolute;
+        width: 16px;
+        height: 16px;
+        right: 175px;
+        top: 12px;
+    }
+
+    &--etoile-02 {
+        right: 205px;
+    }
+
+    &--etoile-03 {
+        right: 217px;
+    }
+
+    &--etoile-04 {
+        right: 135px;
+    }
+
     &--secondaire:before {
         content: "";
         position: absolute;
@@ -232,7 +256,8 @@ svg {
     letter-spacing: -3px;
     text-align: center;
     margin-top: 10px;
-    width: 100%;
+    width: 120%;
+    margin-left: -10%;
 }
 
 .result {
@@ -262,7 +287,7 @@ svg {
 /*****************************/
 /*     bouton     */
 
-.bouton--validation {
+.bouton {
     display: block;
     padding: 8px;
     text-transform: uppercase;
@@ -271,7 +296,7 @@ svg {
     border: solid var(--color-bg-offset) 1px;
     position: relative;
     left: 50%;
-    margin-left: -75px;
+    transform: translateX(-50%);
     margin-top: -60px;
 }
 
@@ -304,6 +329,16 @@ svg {
         border: none;
         border-bottom: solid var(--color-bg-offset) 1px;
         padding-bottom: 3px;
+    }
+
+    .boitecalculinfo{
+        position: relative;
+
+        .unite {
+            position: absolute;
+            color: rgb(202, 202, 202);
+            right: 2px;
+        }
     }
 }
 

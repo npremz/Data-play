@@ -8,6 +8,32 @@ function rqr(alc, prix) {
 
 const list = document.querySelector('#results');
 const search_field = document.querySelector("#search");
+
+let price_field = document.querySelector("#prix");
+const quantity_field = document.querySelector("#quantite");
+let degre_field = document.querySelector("#degre");
+
+const btrqr = document.querySelector(".bouton--validation");
+const rqrResult = document.querySelector("#rqrresult")
+console.log(rqrResult)
+console.log(price_field.value)
+
+btrqr.addEventListener("click", (e) =>  {
+    console.log(price_field.value);
+    console.log(degre_field.value)
+    let prixAuLitre = (remplacer_virgule_par_point(price_field.value) / quantity_field.value) * 100
+    let rqrcalculed = (remplacer_virgule_par_point(degre_field.value) / prixAuLitre) * 10
+    if (isNaN(rqrcalculed) == false) {
+        rqrResult.innerHTML = `RQR ${rqrcalculed.toFixed(1)}`
+    }
+    
+})
+
+function remplacer_virgule_par_point(decimal) {
+	return parseFloat((decimal+"").replace(",","."));
+}
+
+
 const numberResult = document.querySelector('#resultNumber');
 let biereTabl = [];
 let barsTabl = [];
