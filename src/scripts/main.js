@@ -8,10 +8,11 @@ function rqr(alc, prix) {
 
 const list = document.querySelector('#results');
 const search_field = document.querySelector("#search");
-let biereTabl = []
-let barsTabl = []
-let valueBiere = []
-const colors = ["#F6E48F", "#F0AE32", "#7B2020", "#392B1F"]
+const numberResult = document.querySelector('#resultNumber');
+let biereTabl = [];
+let barsTabl = [];
+let valueBiere = [];
+const colors = ["#F6E48F", "#F0AE32", "#7B2020", "#392B1F"];
 
 fetch('scripts/bars.json')
 .then(
@@ -75,6 +76,8 @@ function fetchBiere() {
                         addResults(valueBiere[k], k);
                     } 
 
+                    numberWrite(valueBiere);
+
 
                     search_field.addEventListener('input', (e) => {
                         let search_value = e.currentTarget.value
@@ -133,6 +136,9 @@ function fetchBiere() {
                         for (let k = 0; k < valueBiere.length; k++){
                             addResults(valueBiere[k], k);
                         } 
+
+                        numberWrite(valueBiere);
+
                     });
 
 
@@ -143,6 +149,10 @@ function fetchBiere() {
         }
     )
 
+}
+
+function numberWrite(width) {
+    numberResult.textContent = `${width.length} bières trouvées`
 }
 
 
@@ -175,3 +185,4 @@ function addResults(biere, idNumber) {
     }
 }
 
+ 

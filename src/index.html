@@ -57,26 +57,28 @@
       </section>
       <section class="section">
         <h2 class="titre titre--secondaire"><span class="titre--numero">02.</span>Je teste ma bière</h2>
-        <input id="search" type="search">
-        <button class="bouton--categorie">Type</button>
-        <button class="bouton--categorie">Prix</button>
-        <button class="bouton--categorie">RQR</button>
-        <button class="bouton--categorie">Bar</button>
-        <small class="results"></small>
+        <input id="search" class="search-biere" type="search" placeholder="Choisi ta bière">
+        <div class="boitecategorie">
+          <button class="bouton--categorie">Type</button>
+          <button class="bouton--categorie">Bar</button>
+        </div>
+        <p class="result" id="resultNumber"></p>
         <div class="boitebiere">
           <ul id="results" class="results"></ul> 
         </div>
       </section>
       <section class="section">
-        <h2 class="titre titre--secondaire">Tu ne trouves pas ta bière ?</h2>
-        <input id="prix" type="search">
-        <input id="quantite" type="search">
-        <input id="degre" type="search">
+        <h2 class="titre titre--secondaire"><span class="titre--numero">03.</span> Tu ne trouves pas<br>ta bière ?</h2>
+        <div class="boitecalcul">
+          <input id="prix" class="info-biere info-biere--prix" type="text" placeholder="Prix ?">
+          <input id="quantite" class="info-biere info-biere--qt" type="text" placeholder="Qt ?">
+          <input id="degre" class="info-biere info-biere--degre" type="text" placeholder="Degré ?">
+        </div>
         <p class="rqr">RQR 0,0</p>
         <button class="bouton--validation">Calculer le RQR</button>
       </section>
       <section class="section">
-        <h2 class="titre titre--secondaire">Un petit graphique ?</h2>
+        <h2 class="titre titre--secondaire"><span class="titre--numero">04.</span> Une petite<br>moyenne ?</h2>
         <h3 class="titre titre--soustitre">C'est tout d'abord une ambition</h3>
         <p class="paragraphe">L’ambition de pouvoir s’éclater la gueule avec le moins de ressources possible.</p>
         <p class="rqr">RQR 0,0</p>
