@@ -7,7 +7,7 @@
     --color-bg-offset: #121212;
     --color-text: #121212;
     --color-text-offset: #f4f4f4;
-    --color-primary: #121212;
+    --color-primary: #212121;
     --color-secondary: #f4f4f4;
 }
 @media(prefers-color-scheme: dark){
@@ -16,7 +16,7 @@
         --color-bg-offset: #f4f4f4;
         --color-text: #f4f4f4;
         --color-text-offset: #121212;
-        --color-primary: #f4f4f4;
+        --color-primary: #212121;
         --color-secondary: #121212; 
     }
 }
@@ -25,7 +25,7 @@
     --color-bg-offset: #121212;
     --color-text: #121212;
     --color-text-offset: #f4f4f4;
-    --color-primary: #121212;
+    --color-primary: #212121;
     --color-secondary: #f4f4f4; 
 }
 [data-theme='dark']{
@@ -33,7 +33,7 @@
     --color-bg-offset: #f4f4f4;
     --color-text: #f4f4f4;
     --color-text-offset: #121212;
-    --color-primary: #f4f4f4;
+    --color-primary: #212121;
     --color-secondary: #121212;
 }
 
@@ -67,6 +67,10 @@ ul {
 
 svg {
     fill: var(--color-bg-offset);
+}
+
+button {
+    color: var(--color-bg-offset);
 }
 
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
@@ -149,7 +153,38 @@ svg {
     margin-top: -360px;
 }
 
+.footer {
+    margin-top: 150px;
+    padding-top: 37px;
+    position: relative;
+
+    p {
+        font-size: 14px;
+        text-transform: uppercase;
+    }
+
+    &:before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 1px;
+        background-color: var(--color-bg-offset);
+        top: 0;
+    }
+
+    &__liste {
+        margin-top: 10px;
+    }
+
+    &__link {
+        color: var(--color-text);
+        text-decoration: none;
+        font-size: 14px;
+    }
+}
+
 .section {
+    position: relative;
     padding-top: 130px;
 
     &--premiere {
@@ -189,6 +224,14 @@ svg {
         text-align: right;
         position: relative;
         padding-top: 5px;
+        width: 100%;
+        
+        .maxwidth {
+            position: absolute;
+            right: 0;
+            display: block;
+            max-width: 210px;
+        }
     }
 
     &--numero {
@@ -203,6 +246,10 @@ svg {
         font-size: 16px;
         font-weight: 600;
         margin-top: 37px;
+    }
+
+    &--soustitre-marge100 {
+        margin-top: 100px;
     }
 
     &--etoile {
@@ -225,6 +272,10 @@ svg {
         right: 135px;
     }
 
+    &--etoile-05 {
+        right: 205px;
+    }
+
     &--secondaire:before {
         content: "";
         position: absolute;
@@ -233,7 +284,14 @@ svg {
         top: 0;
         height: 1px;
         background-color: var(--color-bg-offset);
-    }    
+    }
+    
+    &--footer {
+        margin-top: 25px;
+        font-weight: 600;
+        font-size: 14px;
+        letter-spacing: 1px;
+    }
 }
 
 /*****************************/
@@ -273,7 +331,7 @@ svg {
 .search-biere {
     background-color: transparent;
     border: none;
-    margin-top: 37px;
+    margin-top: 100px;
     text-align: center;
     position: relative;
     left: 50%;
@@ -295,9 +353,65 @@ svg {
     border-radius: 16px;
     border: solid var(--color-bg-offset) 1px;
     position: relative;
+    letter-spacing: 1px;
     left: 50%;
     transform: translateX(-50%);
     margin-top: -60px;
+    
+    &--bar {
+        margin-top: -40px;
+    }
+
+    &--bar:after {
+        content: " +";
+    }
+}
+
+/*****************************/
+/*     formulaire   */
+
+.formulaire-bar {
+    margin: 0;
+    width: 200px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    border: none;
+    background-color: var(--color-primary);
+    color: var(--color-text);
+    border-radius: 5px;
+    text-align: center;
+    padding: 0;
+    height: 0px;
+    transition: 0.3s;
+    z-index: 1;
+    
+
+    label {
+        position: relative;
+        margin-top: 20px;
+        font-size: 14px;
+        letter-spacing: 1px;
+
+        &:after {
+            position: absolute;
+            width: 100px;
+            height: 1px;
+            bottom: 0;
+        }
+    }
+
+    input {
+        display: none;
+    }
+}
+
+.height {
+    height: 534px;
+    padding-bottom: 20px;
 }
 
 /*****************************/
@@ -321,7 +435,7 @@ svg {
     display: flex;
     width: 100%;
     justify-content: space-between;
-    margin-top: 37px;
+    margin-top: 100px;
 
     .info-biere {
         width: 90px;
@@ -447,7 +561,159 @@ svg {
     background-position: center;
 }
 
+@media (min-width: 1050px) {
+    body {
+        font-family: neue-haas-grotesk-text, sans-serif;
+        font-size: 18px;
+    }
 
+    /**********************************/
+    /* Conteneurs */
+
+    .conteneur {
+        margin: 49px;
+    }
+    .section {
+        display: grid;
+        grid-template-columns: repeat(9, 1fr);
+        grid-auto-flow: row;
+        grid-column-gap: 35px;
+    }
+
+    /***************************************/
+    /*  titres */
+
+    .titre {
+    
+        &--principal {
+            font-size: 130px;
+            line-height: 143px;
+            letter-spacing: -0.12px;
+        }
+    
+        &--soustitreprincipal {
+            font-size: 22px;
+        }
+    
+        &--secondaire {
+            font-size: 80px;
+            padding-bottom: 10px;
+
+            .maxwidth {
+                max-width: none;
+                margin-top: -100px;
+            }
+            
+        }
+    
+        &--numero {
+            font-size: 80px;
+            left: 0;
+            margin-top: -55px;
+        }
+    
+        &--soustitre {
+            font-size: 22px;
+        }
+
+        &--soustitre-marge100 {
+            margin-top: 37px;
+        }
+    
+        &--etoile {
+            height: 39px;
+            width: 39px;
+            margin-top: -70px;
+            right: 1085px;
+        }
+    
+        &--etoile-02 {
+            right: 740px;
+        }
+    
+        &--etoile-03 {
+            right: 1165px;
+        }
+    
+        &--etoile-04 {
+            right: 915px;
+        }
+    
+        &--etoile-05 {
+            right: 1320px;
+        }
+    
+        &--secondaire:before {
+            top: auto;
+            bottom: 0;
+        }
+        
+        &--footer {
+            margin-top: 25px;
+            font-weight: 600;
+            font-size: 14px;
+            letter-spacing: 1px;
+        }
+    }
+
+    /*****************************/
+    /*     paragraphe    */
+
+    .paragraphe {
+
+        &--intro{
+            font-size: 15px;
+            margin-top: 5px;
+        }
+
+        &--thin {
+            width: 95%;
+        }
+    }
+
+    .rqr {
+        font-size: 450px;
+
+        &--outils {
+            letter-spacing: -0.20px;
+            text-align: left;
+            width: auto;
+            margin-left: 0;
+        }
+    }
+
+    .result {
+        font-size: 12px;
+        position: relative;
+        width: 100%;
+        text-align: center;
+    }
+
+    .allgrid {
+        grid-column-start: 1;
+        grid-column-end: -1;
+    }
+
+    .grid_4_6 {
+        grid-column-start: 4;
+        grid-column-end: 6;
+    }
+
+    .grid_6_8 {
+        grid-column-start: 6;
+        grid-column-end: 8;
+    }
+
+    .grid_6_-1 {
+        grid-column-start: 6;
+        grid-column-end: -1;
+    }
+
+    .grid_8_-1 {
+        grid-column-start: 8;
+        grid-column-end: -1;
+    }
+}
 
 
 
