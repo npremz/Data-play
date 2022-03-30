@@ -56,8 +56,9 @@
         <h3 class="titre titre--soustitre titre--soustitre-marge100 grid_4_6">C'est tout d'abord une ambition</h3>
         <p class="paragraphe paragraphe--thin grid_6_8">L’ambition de pouvoir s’éclater la gueule avec le moins de ressources possible, C’est désormais possible ! Grace à nos scientifique qualifié, nous avons établit un rapport direct entre l’alcoolémie d’une bière et de son prix dans un lieu L.</p>
         <p class="paragraphe grid_8_-1">Avec notre outil, vous pouvez rapidement connaitre le RQR de votre bière favorite. Plus le RQR est élevé, plus la race est prometteuse. </p>
+        <img src="assets/images/mascotte01.png" srcset="assets/images/mascotte01.png 1x, assets/images/mascotte01@2x.png 2x" alt="Mascotte qui fait une démonstration" class="image image--intro">
       </section>
-      <section class="section">
+      <section class="section section--02">
         <h2 class="titre titre--secondaire allgrid"><span class="titre--numero">02.</span>
           <svg class="titre--etoile titre--etoile-02" viewBox="0 0 595.28 595.28" xmlns="http://www.w3.org/2000/svg"><path d="m595.28 297.64a374.24 374.24 0 0 0 -297.64 297.64 374.24 374.24 0 0 0 -297.64-297.64 374.25 374.25 0 0 0 297.64-297.64 374.25 374.25 0 0 0 297.64 297.64z"/></svg>
           <span class="maxwidth">Je teste ma bière</span></h2>
@@ -66,7 +67,7 @@
           <button class="bouton--categorie">Type</button>
           <button class="bouton--categorie">Bar</button>
         </div>
-        <p class="result grid_8_-1" id="resultNumber"></p>
+        <p class="result allgrid" id="resultNumber"></p>
         <div class="boitebiere allgrid">
           <ul id="results" class="results"></ul> 
         </div>
@@ -75,7 +76,7 @@
         <h2 class="titre titre--secondaire allgrid"><span class="titre--numero">03.</span> 
           <svg class="titre--etoile titre--etoile-03" viewBox="0 0 595.28 595.28" xmlns="http://www.w3.org/2000/svg"><path d="m595.28 297.64a374.24 374.24 0 0 0 -297.64 297.64 374.24 374.24 0 0 0 -297.64-297.64 374.25 374.25 0 0 0 297.64-297.64 374.25 374.25 0 0 0 297.64 297.64z"/></svg>
           <span class="maxwidth">Tu ne trouves pas ta bière ?</span></h2>
-        <div class="boitecalcul">
+        <div class="boitecalcul grid_6_8">
           <div class="boitecalculinfo">
             <input id="prix" class="info-biere info-biere--prix" type="text" placeholder="Prix ?">
             <span class="unite">€</span>
@@ -90,19 +91,20 @@
           </div>
         </div>
         <p class="rqr rqr--outils grid_6_-1" id="rqrresult">RQR 0,0</p>
-        <button class="bouton bouton--validation">Calculer le RQR</button>
+        <button class="bouton bouton--validation grid_6_7">Calculer le RQR</button>
+        <img src="assets/images/mascotte02.png" srcset="assets/images/mascotte02.png 1x, assets/images/mascotte02@2x.png 2x" alt="Mascotte qui fait une démonstration" class="image image--intro image--calcul">
       </section>
-      <section class="section">
+      <section class="section section--03">
         <h2 class="titre titre--secondaire allgrid"><span class="titre--numero">04.</span>
           <svg class="titre--etoile titre--etoile-04" viewBox="0 0 595.28 595.28" xmlns="http://www.w3.org/2000/svg"><path d="m595.28 297.64a374.24 374.24 0 0 0 -297.64 297.64 374.24 374.24 0 0 0 -297.64-297.64 374.25 374.25 0 0 0 297.64-297.64 374.25 374.25 0 0 0 297.64 297.64z"/></svg>
           <span class="maxwidth">Une petite moyenne ?</span></h2>
-        <h3 class="titre titre--soustitre titre--soustitre-marge100">Du coup, on se la met où ?</h3>
-        <p class="paragraphe">Grave à notre outil super performant, nous avons pu accès au rapport qualité race des différents bars.</p>
-        <p class="paragraphe">Compare le RQR des bars avec l'outil ci-dessous pour savoir où tu vas boire ce soir !</p>
-        <p class="rqr rqr--outils" id="rqrmoyen">RQR 0,0</p>
+        <h3 class="titre titre--soustitre titre--soustitre-marge100 grid_4_6">Du coup, on se la met où ?</h3>
+        <p class="paragraphe grid_6_8">Grave à notre outil super performant, nous avons pu accès au rapport qualité race des différents bars.</p>
+        <p class="paragraphe grid_8_-1">Compare le RQR des bars avec l'outil ci-dessous pour savoir où tu vas boire ce soir !</p>
+        <p class="rqr rqr--outils rqr--outils-02 allgrid" id="rqrmoyen">RQR 0,0</p>
         <small class="barname"></small>
-        <button class="bouton bouton--bar">Choisi ton bar</button>
-        <fieldset class="formulaire-bar">
+        <button class="bouton bouton--bar allgrid">Choisi ton bar</button>
+        <fieldset class="formulaire-bar allgrid">
           <label for="laboratoire">Laboratoire</label>
           <input type="radio" class="input-bar" id="laboratoire" name="bar" value="Laboratoire">
           <label for="monda">Monde à L'Envers</label>
@@ -130,28 +132,29 @@
           <label for="bouffon">Bouffon du Roi</label>
           <input type="radio" class="input-bar" id="bouffon" name="bar" value="Bouffon du Roi">
         </fieldset>
+        <img src="assets/images/mascotte03.png" srcset="assets/images/mascotte03.png 1x, assets/images/mascotte03@2x.png 2x" alt="Mascotte qui fait une démonstration" class="image image--intro image--last">
       </section>
-      <section class="section">
+      <!-- <section class="section">
         <h2 class="titre titre--secondaire allgrid"><span class="titre--numero">05.</span>
           <svg class="titre--etoile titre--etoile-05" viewBox="0 0 595.28 595.28" xmlns="http://www.w3.org/2000/svg"><path d="m595.28 297.64a374.24 374.24 0 0 0 -297.64 297.64 374.24 374.24 0 0 0 -297.64-297.64 374.25 374.25 0 0 0 297.64-297.64 374.25 374.25 0 0 0 297.64 297.64z"/></svg>
           <span class="maxwidth">Comment se mettre une race ?</span></h2>
-        <h3 class="titre titre--soustitre titre--soustitre-marge100">01. Le choix de la bière</h3>
-        <p class="paragraphe">Tout d'abord, prévoyez une bière ayant une forte teneur en alcool. Plus le taux d’alcoolémie est fort plus la race est prometteuse. En général, la teneur en alcool d'une boisson est visible sur le côté de la bouteille.</p>
-        <p class="paragraphe">Les bières très alcoolisées contiennent entre 15 et 18 % d'alcool, les bières contenant 8% ou plus d'alcool sont également assez fortes.</p>
-        <h3 class="titre titre--soustitre">02. Prévoir une boisson light</h3>
-        <p class="paragraphe">Les boissons light ou zéro ont tendance à ne pas être considéré comme aliments par notre organisme cela a pour effet d'accélérer l'absorption de l’alcool dans le sang.</p>
-        <h3 class="titre titre--soustitre">03. Soyez décontracté</h3>
-        <p class="paragraphe">Il a été démontré que boire en étant stressé pouvait engendrer une diminution des effets enivrants, il est donc conseillé de vous détendre avant d'envisager une race afin d'éviter tout quiproquo. (évitez League of Legends)</p>
-        <h3 class="titre titre--soustitre">04. Buvez en groupe</h3>
-        <p class="paragraphe">Boire en bonne compagnie a pour effet d’augmenter la consommation d’alcool, mais permet également de boire plus vite par l’utilisation de jeux et de défis bon enfants.</p>
-        <h3 class="titre titre--soustitre">05. Connaissez vos limites</h3>
-        <p class="paragraphe">Pour que votre race soit agréable et saine, tâchez de ne pas exagérer sur votre consommation d’alcool, évitez donc de vous faire influencer afin d’esquiver le fameux verre de trop et de tomber malade. Si vous êtes novice en la matière, tâchez de ne prendre que 2 bières très alcoolisées et analyser votre état enfin d'être prêt pour la prochaine soirée.</p>
-      </section>
+        <h3 class="titre titre--soustitre titre--soustitre-marge100 grid_4_6 ">01. Le choix de la bière</h3>
+        <p class="paragraphe grid_6_8">Tout d'abord, prévoyez une bière ayant une forte teneur en alcool. Plus le taux d’alcoolémie est fort plus la race est prometteuse. En général, la teneur en alcool d'une boisson est visible sur le côté de la bouteille.</p>
+        <p class="paragraphe grid_8_-1">Les bières très alcoolisées contiennent entre 15 et 18 % d'alcool, les bières contenant 8% ou plus d'alcool sont également assez fortes.</p>
+        <h3 class="titre titre--soustitre grid_4_6 ">02. Prévoir une boisson light</h3>
+        <p class="paragraphe grid_6_-1">Les boissons light ou zéro ont tendance à ne pas être considéré comme aliments par notre organisme cela a pour effet d'accélérer l'absorption de l’alcool dans le sang.</p>
+        <h3 class="titre titre--soustitre grid_4_6 ">03. Soyez décontracté</h3>
+        <p class="paragraphe grid_6_-1">Il a été démontré que boire en étant stressé pouvait engendrer une diminution des effets enivrants, il est donc conseillé de vous détendre avant d'envisager une race afin d'éviter tout quiproquo. (évitez League of Legends)</p>
+        <h3 class="titre titre--soustitre grid_4_6 ">04. Buvez en groupe</h3>
+        <p class="paragraphe grid_6_-1">Boire en bonne compagnie a pour effet d’augmenter la consommation d’alcool, mais permet également de boire plus vite par l’utilisation de jeux et de défis bon enfants.</p>
+        <h3 class="titre titre--soustitre grid_4_6 ">05. Connaissez vos limites</h3>
+        <p class="paragraphe grid_6_-1">Pour que votre race soit agréable et saine, tâchez de ne pas exagérer sur votre consommation d’alcool, évitez donc de vous faire influencer afin d’esquiver le fameux verre de trop et de tomber malade. Si vous êtes novice en la matière, tâchez de ne prendre que 2 bières très alcoolisées et analyser votre état enfin d'être prêt pour la prochaine soirée.</p>
+      </section> -->
     </main>
-    <footer class="footer conteneur">
-      <p>RQR // Data-play 2022</p>
-      <h4 class="titre titre--footer">L'Équipe</h4>
-      <ul class="footer__liste">
+    <footer class="footer section conteneur">
+      <p class="grid_1_3">RQR // Data-play 2022</p>
+      <h4 class="titre titre--footer grid_3_5 gridr_1">L'Équipe</h4>
+      <ul class="footer__liste grid_3_5">
         <li>
           <a href="nicolas-premont.be" class="footer__link">Nicolas Prémont</a>
         </li>
@@ -165,8 +168,8 @@
           <a href="https://alexandre-potakowski.ovh/" class="footer__link">Alexandre Potakoswki</a>
         </li>
       </ul>
-      <h4 class="titre titre--footer">Remerciements</h4>
-      <ul class="footer__liste">
+      <h4 class="titre titre--footer grid_5_7 gridr_1">Remerciements</h4>
+      <ul class="footer__liste grid_5_7">
         <li>
           <a href="https://barnabeer.be" class="footer__link">Barnabeer</a>
         </li>

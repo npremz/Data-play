@@ -8,6 +8,8 @@ function rqr(alc, prix) {
     return (alc / prix) * 10
 }
 
+const burgerOpen = document.querySelector(".header__burger-menu")
+
 const btBar = document.querySelector(".bouton--bar");
 const formulaireBar = document.querySelector(".formulaire-bar");
 const rqrMoyen = document.getElementById("rqrmoyen");

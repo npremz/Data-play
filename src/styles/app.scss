@@ -46,6 +46,7 @@ body {
     letter-spacing: 0.2px;
     color: var(--color-text);
     overflow-x: hidden;
+    max-width: 100%;
 }
 
 button {
@@ -71,6 +72,15 @@ svg {
 
 button {
     color: var(--color-bg-offset);
+}
+
+input {
+    color: var(--color-text);
+}
+
+
+input:focus {
+    border: none;
 }
 
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
@@ -153,6 +163,28 @@ button {
     margin-top: -360px;
 }
 
+.section {
+    position: relative;
+    padding-top: 130px;
+
+    &--premiere {
+        padding-top: 80px;
+    }
+    &--intro {
+        padding-top: 80px;
+        margin-bottom: 57px;
+    }
+
+    &--02 {
+        margin-top: 210px;
+    }
+
+    &--03 {
+        margin-top: 180px;
+        margin-bottom: 380px;
+    }
+}
+
 .footer {
     margin-top: 150px;
     padding-top: 37px;
@@ -180,19 +212,6 @@ button {
         color: var(--color-text);
         text-decoration: none;
         font-size: 14px;
-    }
-}
-
-.section {
-    position: relative;
-    padding-top: 130px;
-
-    &--premiere {
-        padding-top: 80px;
-    }
-    &--intro {
-        padding-top: 80px;
-        margin-bottom: 57px;
     }
 }
 
@@ -415,6 +434,23 @@ button {
 }
 
 /*****************************/
+/*     image    */
+
+.image {
+    height: 350px;
+    position: absolute;
+
+    &--intro {
+        transform: scaleX(-1);
+        right: 0;
+    }
+
+    &--last {
+        right: 5%;
+    }
+}
+
+/*****************************/
 /*     boites     */
 
 .boitecategorie {
@@ -443,6 +479,7 @@ button {
         border: none;
         border-bottom: solid var(--color-bg-offset) 1px;
         padding-bottom: 3px;
+        color: var(--color-text);
     }
 
     .boitecalculinfo{
@@ -540,7 +577,7 @@ button {
         height: 50px;
         width: 75px;
         left: 50%;
-        margin-left: -37.5px;
+        transform: translateX(-50%);
         margin-top: -30px;
 
     }
@@ -573,11 +610,33 @@ button {
     .conteneur {
         margin: 49px;
     }
+
+    .main {
+        margin-top: -500px;
+    }
     .section {
         display: grid;
         grid-template-columns: repeat(9, 1fr);
         grid-auto-flow: row;
         grid-column-gap: 35px;
+        margin-top: 100px;
+
+        &--premiere {
+            padding-top: 150px;
+        }
+
+        &--02 {
+            margin-top: 350px;
+        }
+
+        &--03 {
+            margin-bottom: 400px;
+        }
+    }
+
+    .footer {
+        padding-top: 49px;
+        
     }
 
     /***************************************/
@@ -586,12 +645,13 @@ button {
     .titre {
     
         &--principal {
-            font-size: 130px;
+            font-size: 7vw;
             line-height: 143px;
             letter-spacing: -0.12px;
         }
     
         &--soustitreprincipal {
+            margin-top: -45px;
             font-size: 22px;
         }
     
@@ -649,12 +709,34 @@ button {
         }
         
         &--footer {
-            margin-top: 25px;
+            margin-top: 0px;
             font-weight: 600;
             font-size: 14px;
             letter-spacing: 1px;
         }
     }
+
+    /*****************************/
+    /*     image    */
+
+    .image {
+        height: 600px;
+
+        &--intro {
+            left: 50%;
+            transform: translate(-135%, 40%);
+        }
+
+        &--calcul {
+            height: 700px;
+            transform: translate(-135%, 36%);
+        }
+
+        &--last {
+            height: 600px;
+            transform: translate(95%, 110%);
+        }
+}
 
     /*****************************/
     /*     paragraphe    */
@@ -679,14 +761,85 @@ button {
             text-align: left;
             width: auto;
             margin-left: 0;
+            margin-top: -75px;
+        }
+
+        &--outils-02 {
+            text-align: center;
+            margin-top: 10px;
         }
     }
 
-    .result {
-        font-size: 12px;
+    .search-biere {
+        background-color: transparent;
+        border: none;
+        margin-top: 100px;
+        text-align: left;
         position: relative;
+        left: 0;
         width: 100%;
-        text-align: center;
+        margin-left: 0;
+        font-size: 35px;
+        border-bottom: solid var(--color-bg-offset) 1px;
+        padding-bottom: 10px;
+        padding-left: 10px;
+    }
+
+    /*************************************************/
+    /* bouton */
+
+    .bouton {
+        padding: 8px;
+        text-transform: uppercase;
+        font-size: 14px;
+        border-radius: 17px;
+        height: 32px;
+        letter-spacing: 1px;
+        left: 50%;
+        transform: translateX(none);
+        margin-top: -60px;
+        width: 200px;
+
+        &--bar {
+            width: 200px;
+        }
+    }
+
+ /*************************************************/
+    /* Boite */
+
+    .boitecategorie {
+        display: flex;
+        margin-top: -30px;
+        justify-content: flex-end;
+        
+        .bouton--categorie {
+            margin-right: 30px;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+    }
+
+    
+
+    .result {
+        margin-top: 5px;
+        margin-bottom: 37px;
+        text-align: left;
+        padding-left: 10px;
+    }
+
+    .boitebiere {
+        margin-left: -49px;
+    }
+
+    .formulaire-bar {
+        margin-top: 870px;
+    }
+
+    .gridr_1 {
+        grid-row-start: 1;
     }
 
     .allgrid {
@@ -694,9 +847,29 @@ button {
         grid-column-end: -1;
     }
 
+    .grid_1_3 {
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+
+    .grid_3_5 {
+        grid-column-start: 3;
+        grid-column-end: 5;
+    }
+
+    .grid_5_7 {
+        grid-column-start: 5;
+        grid-column-end: 7;
+    }
+
     .grid_4_6 {
         grid-column-start: 4;
         grid-column-end: 6;
+    }
+
+    .grid_6_7 {
+        grid-column-start: 6;
+        grid-column-end: 7;
     }
 
     .grid_6_8 {
@@ -714,62 +887,3 @@ button {
         grid-column-end: -1;
     }
 }
-
-
-
-// Neue Haas Grotesk Display Pro 55 Roman
-
-// font-family: neue-haas-grotesk-display, sans-serif;
-
-// font-weight: 500;
-
-// font-style: normal;
-
-
-// Neue Haas Grotesk Display Pro 65 Medium
-
-// font-family: neue-haas-grotesk-display, sans-serif;
-
-// font-weight: 600;
-
-// font-style: normal;
-
-
-// Neue Haas Grotesk Display Pro 75 Bold
-
-// font-family: neue-haas-grotesk-display, sans-serif;
-
-// font-weight: 700;
-
-// font-style: normal;
-
-
-// Neue Haas Grotesk Text Pro 55 Roman
-
-// font-family: neue-haas-grotesk-text, sans-serif;
-
-// font-weight: 400;
-
-// font-style: normal;
-
-
-// Neue Haas Grotesk Text Pro 65 Medium
-
-// font-family: neue-haas-grotesk-text, sans-serif;
-
-// font-weight: 500;
-
-// font-style: normal;
-
-
-// Neue Haas Grotesk Text Pro 75 Bold
-
-// font-family: neue-haas-grotesk-text, sans-serif;
-
-// font-weight: 700;
-
-// font-style: normal;
-
-// font-family: bee,sans-serif;
-// font-weight: 700;
-// font-style: normal;
