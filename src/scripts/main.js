@@ -4,16 +4,60 @@ import { gsap } from "gsap";
 
 console.log(gsap.version)
 
+const darkTheme = document.querySelectorAll(".darkmode");
+
+for (let darkT of darkTheme) {
+    darkT.addEventListener("click", function(){
+        if(document.body.dataset.theme === "dark"){
+            light();
+            localStorage.setItem("theme", "light");
+        } else {
+            dark();
+            localStorage.setItem("theme", "dark");
+        } 
+    });
+}
+
+const userDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+let theme = localStorage.getItem('theme');
+if((!theme && userDark) || (theme === "dark")){
+    dark();
+} else if(theme === "light"){
+    light();
+}
+
+function dark(){
+    document.body.setAttribute("data-theme", "dark");
+}
+
+function light(){
+    document.body.setAttribute("data-theme", "light");
+}
+
 function rqr(alc, prix) {
     return (alc / prix) * 10
 }
 
-const burgerOpen = document.querySelector(".header__burger-menu")
+const video = document.querySelector(".boitevideo");
+const btvideo = document.querySelectorAll('.btvideo');
+const closevideo = document.querySelector('.closevideo');
+
+const btType = document.querySelector("#type");
+const formulaireType = document.querySelector(".formulaire-type");
+console.log(formulaireType)
+
+const burgerOpen = document.querySelector("#open");
+const burgerClose = document.querySelector("#close");
+const nav = document.querySelector(".nav");
+
+const formulaireBarCat = document.querySelector(".formulaire-barcat");
+const btbarcat = document.querySelector("#btbarcat");
 
 const btBar = document.querySelector(".bouton--bar");
 const formulaireBar = document.querySelector(".formulaire-bar");
 const rqrMoyen = document.getElementById("rqrmoyen");
-console.log(rqrMoyen)
+console.log(formulaireBar)
 
 const list = document.querySelector('#results');
 const search_field = document.querySelector("#search");
@@ -30,7 +74,7 @@ let biereTabl = [];
 let barsTabl = [];
 let valueBiere = [];
 let valueBiereSearch = [];
-const colors = ["#F6E48F", "#F0AE32", "#7B2020", "#392B1F"];
+const colors = ["#FBDDAA", "#F6B057", "#A24541", "#422526"];
 
 fetch('scripts/bars.json')
 .then(
@@ -181,7 +225,7 @@ function addResults(biere, idNumber) {
                                     <p class="nombar">${biere.barName}</p>
                                 </div>
                                 <p class="rqr">RQR ${biere.rqr}</p>
-                                <img class="emoji" src="assets/images/neutral.svg">
+                                <img id="${idNumber}i" class="emoji" src="assets/images/neutral.svg">
                                 <div class="boiteinfos"> 
                                     <p class="nominfos"><span class="medium">type</span><br>${biere.type}</p>
                                     <p class="nominfos"><span class="medium">degré</span><br><span class="percent">${biere.alcool}</span></p>
@@ -190,6 +234,8 @@ function addResults(biere, idNumber) {
                             </div>`;
     list.append(result_el);
     var elem = document.getElementById(idNumber);
+    var elemi = document.getElementById(idNumber+"i")
+    console.log(elemi)
     if (biere.rqr >= 5) elem.style.backgroundColor = colors[1]
     if (biere.rqr >= 7.5) {
         elem.style.backgroundColor = colors[2]
@@ -221,6 +267,7 @@ btBar.addEventListener("click", (e) => {
 })
 
 formulaireBar.addEventListener("change",(e) => {
+    console.log('hello')
     formulaireBar.classList.remove("height");
     var inputBar = document.querySelectorAll('.input-bar');
     let j = 0
@@ -237,6 +284,71 @@ formulaireBar.addEventListener("change",(e) => {
             }
         }
     }
-    console.log('je ferm')
 }, true);
+
+btType.addEventListener("click", (e) => {
+    formulaireBarCat.classList.remove("height3");
+    formulaireType.classList.remove("height2");
+    formulaireType.classList.toggle("height2");
+})
+
+formulaireType.addEventListener("change", (e) => {
+    formulaireType.classList.remove("height2");
+    var inputType = document.querySelectorAll(".input-type");
+    list.innerHTML = '';
+
+    for (let input2 of inputType) {
+        if ( input2.checked === true) {
+            for (let i = 0; i < valueBiere.length; i++) {
+                if (input2.value == valueBiere[i].type.toLowerCase()) {
+
+                    addResults(valueBiere[i], i);
+                }
+            }
+        }
+    }
+}) 
+
+btbarcat.addEventListener("click", (e) => {
+    formulaireType.classList.remove("height2");
+    formulaireType.classList.remove("height3");
+    formulaireBarCat.classList.toggle("height3");
+})
+
+formulaireBarCat.addEventListener("change", (e) => {
+    formulaireBarCat.classList.remove("height3");
+    var inputType = document.querySelectorAll(".input-barcat");
+    list.innerHTML = '';
+
+    for (let input3 of inputType) {
+        if ( input3.checked === true) {
+            for (let i = 0; i < valueBiere.length; i++) {
+                if (input3.value.toLowerCase() == valueBiere[i].barName.toLowerCase()) {
+
+                    addResults(valueBiere[i], i);
+                }
+            }
+        }
+    }
+}) 
+
+for (let bt of btvideo) {
+    bt.addEventListener("click", (e) => {
+        video.classList.add('display')
+        nav.classList.remove('left')
+    })
+}
+
+closevideo.addEventListener("click", (e) => {
+    video.classList.remove('display')
+})
+
  
+
+burgerOpen.addEventListener("click", (e) => {
+    nav.classList.add("left")
+})
+
+burgerClose.addEventListener("click", (e) => {
+    nav.classList.remove("left")
+})

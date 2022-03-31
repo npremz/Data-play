@@ -130,6 +130,12 @@ input:focus {
         width: 30px;
     }
 
+    &__burger-menu--close {
+        position: absolute;
+        top: 37px;
+        right: 37px;
+    }
+
     &__svg {
         height: 20px;
     }
@@ -151,6 +157,36 @@ input:focus {
     z-index: 10;
     top: 0;
     left: 100%;
+    padding: 37px;
+    transition: 0.3s ease-out;
+
+    &__liste {
+        position: relative;
+        top: 50%;
+        transform: translateY(-60%);
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+
+        li{
+            display: flex;
+            flex-direction: column;
+
+            button {
+                margin-top: 25px;
+            }
+        }
+    }
+
+    &__liens {
+        padding: 7.5px;
+        text-transform: uppercase;
+        position: relative;
+        color: var(--color-text);
+        font-size: 33px;
+        text-decoration: none;
+    }
 }
 
 .boitemain {
@@ -213,6 +249,10 @@ input:focus {
         text-decoration: none;
         font-size: 14px;
     }
+}
+
+.left {
+    left: 0%;
 }
 
 /*****************************/
@@ -389,6 +429,70 @@ input:focus {
 /*****************************/
 /*     formulaire   */
 
+.formulaire-type {
+    margin: 0;
+    width: 100px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    right: 54px;
+    margin-top: 29px;
+    border: none;
+    background-color: var(--color-primary);
+    color: #f4f4f4;
+    border-radius: 5px;
+    text-align: center;
+    padding: 0;
+    height: 0px;
+    transition: 0.3s;
+    z-index: 1;
+
+    label {
+        
+        position: relative;
+        margin-top: 20px;
+        font-size: 14px;
+        letter-spacing: 1px;
+    }
+
+    input {
+        display: none;
+    }
+}
+
+.formulaire-barcat {
+    margin: 0;
+    width: 150px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    right: 54px;
+    margin-top: 29px;
+    border: none;
+    background-color: var(--color-primary);
+    color: #f4f4f4;
+    border-radius: 5px;
+    text-align: center;
+    padding: 0;
+    height: 0px;
+    transition: 0.3s;
+    z-index: 1;
+
+    label {
+        
+        position: relative;
+        margin-top: 20px;
+        font-size: 14px;
+        letter-spacing: 1px;
+    }
+
+    input {
+        display: none;
+    }
+}
+
 .formulaire-bar {
     margin: 0;
     width: 200px;
@@ -400,7 +504,7 @@ input:focus {
     transform: translateX(-50%);
     border: none;
     background-color: var(--color-primary);
-    color: var(--color-text);
+    color: #f4f4f4;
     border-radius: 5px;
     text-align: center;
     padding: 0;
@@ -410,17 +514,11 @@ input:focus {
     
 
     label {
+        
         position: relative;
         margin-top: 20px;
         font-size: 14px;
         letter-spacing: 1px;
-
-        &:after {
-            position: absolute;
-            width: 100px;
-            height: 1px;
-            bottom: 0;
-        }
     }
 
     input {
@@ -429,10 +527,16 @@ input:focus {
 }
 
 .height {
-    height: 534px;
-    padding-bottom: 20px;
+    height: 554px;
 }
 
+.height2 {
+    height: 360px;
+}
+
+.height3 {
+    height: 550px;
+}
 /*****************************/
 /*     image    */
 
@@ -453,7 +557,37 @@ input:focus {
 /*****************************/
 /*     boites     */
 
+.boitevideo {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    padding: 30px;
+    background-color: var(--color-bg-offset);
+    border-radius: 5px;
+    display: none;
+
+    iframe {
+        height: 180px;
+        width: 320px;
+    }
+
+    svg {
+        fill: var(--color-bg);
+    }
+    
+    .closevideo {
+        position: absolute;
+        width: 20px;
+        top: 5px;
+        right: 5px;
+        z-index: 3;
+    }
+}
+
 .boitecategorie {
+    position: relative;
     display: flex;
     margin-top: 10px;
     justify-content: space-around;
@@ -461,6 +595,8 @@ input:focus {
     margin-bottom: 37px;
     
     .bouton--categorie {
+
+        position: relative;
         font-size: 14px;
         text-transform: uppercase;
         letter-spacing: 1px;
@@ -491,6 +627,10 @@ input:focus {
             right: 2px;
         }
     }
+}
+
+.menu {
+    display: none;
 }
 
 .boitebiere {
@@ -583,6 +723,57 @@ input:focus {
     }
 }
 
+/* dark mode button */
+
+.darkmode{
+    background-color: var(--color-primary);
+    color: var(--color-secondary);
+    border: none;
+    cursor: pointer;
+}
+
+body[data-theme='dark'] .light-mode-button span:nth-child(1){
+    background-color: #FAFAFA;
+    color: #23221c;
+}
+
+body[data-theme='dark'] .light-mode-button span:nth-child(2) {
+    left: 32.5px;
+    background-color: #23221c;
+}
+
+.light-mode-button {
+    background: 0;
+    border: 0;
+    box-sizing: border-box;
+    cursor: pointer;
+    height: 20px;
+    width: 50px;
+    position: relative;
+}
+
+.light-mode-button span:nth-child(1) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 50px;
+    background-color: #23221c;
+    transition: 0.3s;
+    border-radius: 50px;
+}
+
+.light-mode-button span:nth-child(2) {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 10px;
+    height: 10px;
+    background-color: #FAFAFA;
+    transition: 0.3s;
+    border-radius: 50px;
+}
+
 .hidden {
     position: relative;
     border: none;
@@ -598,6 +789,10 @@ input:focus {
     background-position: center;
 }
 
+.display {
+    display: block;
+}
+
 @media (min-width: 1050px) {
     body {
         font-family: neue-haas-grotesk-text, sans-serif;
@@ -609,6 +804,32 @@ input:focus {
 
     .conteneur {
         margin: 49px;
+    }
+
+    .header {
+
+        &__burger-menu {
+            display: none;
+        }
+
+        .menu {
+            .nav__liste {
+                flex-direction: row;
+
+                .nav__liens {
+                    font-size: 12px;
+                    margin-left: 30px;
+                    padding: 0;
+                }
+
+                button {
+                    margin-top: 0;
+                    margin-left: 25px;
+                }
+            }
+
+            
+        }
     }
 
     .main {
@@ -645,7 +866,7 @@ input:focus {
     .titre {
     
         &--principal {
-            font-size: 7vw;
+            font-size: 6.9vw;
             line-height: 143px;
             letter-spacing: -0.12px;
         }
@@ -808,6 +1029,30 @@ input:focus {
  /*************************************************/
     /* Boite */
 
+    .boitevideo {
+    
+        iframe {
+            height: 320px;
+            width: 560px;
+        }
+
+        svg {
+            fill: var(--color-bg-offset);
+        }
+        
+        .closevideo {
+            position: absolute;
+            width: 15px;
+            top: 0px;
+            right: -25px;
+            z-index: 3;
+        }
+    }
+
+    .menu {
+        display: block;
+    }
+
     .boitecategorie {
         display: flex;
         margin-top: -30px;
@@ -820,8 +1065,6 @@ input:focus {
             letter-spacing: 1px;
         }
     }
-
-    
 
     .result {
         margin-top: 5px;
