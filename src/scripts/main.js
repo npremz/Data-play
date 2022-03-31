@@ -75,6 +75,7 @@ let barsTabl = [];
 let valueBiere = [];
 let valueBiereSearch = [];
 const colors = ["#FBDDAA", "#F6B057", "#A24541", "#422526"];
+const images = ["assets/images/degout.svg", "assets/images/ok.svg", "assets/images/race.svg", "assets/images/mortb.svg"]
 
 fetch('scripts/bars.json')
 .then(
@@ -225,7 +226,7 @@ function addResults(biere, idNumber) {
                                     <p class="nombar">${biere.barName}</p>
                                 </div>
                                 <p class="rqr">RQR ${biere.rqr}</p>
-                                <img id="${idNumber}i" class="emoji" src="assets/images/neutral.svg">
+                                <img id="${idNumber}i" class="emoji" src="assets/images/degout.svg">
                                 <div class="boiteinfos"> 
                                     <p class="nominfos"><span class="medium">type</span><br>${biere.type}</p>
                                     <p class="nominfos"><span class="medium">degré</span><br><span class="percent">${biere.alcool}</span></p>
@@ -235,15 +236,19 @@ function addResults(biere, idNumber) {
     list.append(result_el);
     var elem = document.getElementById(idNumber);
     var elemi = document.getElementById(idNumber+"i")
-    console.log(elemi)
-    if (biere.rqr >= 5) elem.style.backgroundColor = colors[1]
+    if (biere.rqr >= 5) {
+        elem.style.backgroundColor = colors[1]
+        elemi.src = images[1]
+    }
     if (biere.rqr >= 7.5) {
         elem.style.backgroundColor = colors[2]
         elem.style.color = "#f4f4f4"
+        elemi.src = images[2]
     }
     if (biere.rqr >= 10) {
         elem.style.backgroundColor = colors[3]
         elem.style.color = "#f4f4f4"
+        elemi.src = images[3]
     }
 }
 
@@ -288,7 +293,6 @@ formulaireBar.addEventListener("change",(e) => {
 
 btType.addEventListener("click", (e) => {
     formulaireBarCat.classList.remove("height3");
-    formulaireType.classList.remove("height2");
     formulaireType.classList.toggle("height2");
 })
 
@@ -311,7 +315,6 @@ formulaireType.addEventListener("change", (e) => {
 
 btbarcat.addEventListener("click", (e) => {
     formulaireType.classList.remove("height2");
-    formulaireType.classList.remove("height3");
     formulaireBarCat.classList.toggle("height3");
 })
 

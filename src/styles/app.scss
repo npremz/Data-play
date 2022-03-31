@@ -436,7 +436,8 @@ input:focus {
     display: flex;
     flex-direction: column;
     position: absolute;
-    right: 54px;
+    left: 50%;
+    transform: translateX(-127%);
     margin-top: 29px;
     border: none;
     background-color: var(--color-primary);
@@ -468,7 +469,8 @@ input:focus {
     display: flex;
     flex-direction: column;
     position: absolute;
-    right: 54px;
+    left: 50%;
+    transform: translateX(-1%);
     margin-top: 29px;
     border: none;
     background-color: var(--color-primary);
@@ -590,9 +592,13 @@ input:focus {
     position: relative;
     display: flex;
     margin-top: 10px;
-    justify-content: space-around;
+    max-width: 200px;
+    left: 50%;
+    transform: translateX(-50%);
+    justify-content: space-between;
     margin-right: 0;
     margin-bottom: 37px;
+    z-index: 1;
     
     .bouton--categorie {
 
@@ -600,6 +606,10 @@ input:focus {
         font-size: 14px;
         text-transform: uppercase;
         letter-spacing: 1px;
+
+        &:after {
+            content: " +";
+        }
     }
 }
 
@@ -793,7 +803,19 @@ body[data-theme='dark'] .light-mode-button span:nth-child(2) {
     display: block;
 }
 
-@media (min-width: 1050px) {
+@media (min-width: 550px) {
+    .conteneur {
+        max-width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .rqr--outils {
+        font-size: 440px
+    } 
+}
+
+@media (min-width: 900px) {
     body {
         font-family: neue-haas-grotesk-text, sans-serif;
         font-size: 18px;
@@ -803,6 +825,7 @@ body[data-theme='dark'] .light-mode-button span:nth-child(2) {
     /* Conteneurs */
 
     .conteneur {
+        max-width: none;
         margin: 49px;
     }
 
@@ -1029,6 +1052,18 @@ body[data-theme='dark'] .light-mode-button span:nth-child(2) {
  /*************************************************/
     /* Boite */
 
+    .formulaire-type {
+        transform: translateX(0);
+        right: 77px;
+        left: auto;
+    }
+
+    .formulaire-barcat {
+        transform: translateX(0);
+        right: -20px;
+        left: auto;
+    }
+
     .boitevideo {
     
         iframe {
@@ -1057,6 +1092,10 @@ body[data-theme='dark'] .light-mode-button span:nth-child(2) {
         display: flex;
         margin-top: -30px;
         justify-content: flex-end;
+        right: 0;
+        left: 0;
+        max-width: none;
+        transform: translateX(0);
         
         .bouton--categorie {
             margin-right: 30px;
@@ -1075,6 +1114,7 @@ body[data-theme='dark'] .light-mode-button span:nth-child(2) {
 
     .boitebiere {
         margin-left: -49px;
+        width: calc(98px + 100%);
     }
 
     .formulaire-bar {
@@ -1130,3 +1170,4 @@ body[data-theme='dark'] .light-mode-button span:nth-child(2) {
         grid-column-end: -1;
     }
 }
+

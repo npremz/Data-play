@@ -2,11 +2,31 @@
 <html>
 <head>
   <title>Rapport Qualité Race</title>
+  <link rel="icon" type="image/svg" href="assets/images/favico.svg" />
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
   <meta name="description" content="">
-  <!-- Meta Partage -->
+  
+  <!-- Twitter Card data -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="http://nicolas-premont.be/projets/dataplay">
+  <meta name="twitter:creator" content="@nicolas_premont">
+  <meta name="twitter:title" content="RQR / Dataplay">
+  <meta name="twitter:description" content="Page d'accueil du site Rapport Qualité Race">
+<!-- Twitter summary card with large image must be at least 280x150px -->
+  <meta name="twitter:image" content="http://nicolas-premont.be/projets/dataplay/assets/images/meta.png"
+
+<!-- Open Graph data -->
+  <meta property="og:site_name" content="RQR / Dataplay" />
+  <meta property="og:title" content="RQR / Dataplay" />
+  <meta property="og:description" content="Page d'accueil du site Rapport Qualité Race" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="http://nicolas-premont.be/projets/dataplay" />
+  <meta property="og:image" content="http://nicolas-premont.be/projets/dataplay/assets/images/meta.png" />
+  <meta property="og:image:width" content="1800">
+  <meta property="og:image:height" content="945">
+
   <!-- Favicon -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -31,7 +51,7 @@
           <a href="#" class="nav__liens">Accueil</a>
         </li>
         <li>
-          <a href="#" class="nav__liens">Choix bière</a>
+          <a href="#recherche" class="nav__liens">Choix bière</a>
         </li>
         <li>
           <p class="nav__liens btvideo">Trailer</p>
@@ -56,7 +76,7 @@
         <a href="#" class="nav__liens">Accueil</a>
       </li>
       <li>
-        <a href="#" class="nav__liens">Choix bière</a>
+        <a href="#recherche" class="nav__liens">Choix bière</a>
       </li>
       <li>
         <p class="nav__liens btvideo">Trailer</p>
@@ -87,7 +107,7 @@
         <img src="assets/images/mascotte01.png" srcset="assets/images/mascotte01.png 1x, assets/images/mascotte01@2x.png 2x" alt="Mascotte qui fait une démonstration" class="image image--intro">
       </section>
       <section class="section section--02">
-        <h2 class="titre titre--secondaire allgrid"><span class="titre--numero">02.</span>
+        <h2 id="recherche" class="titre titre--secondaire allgrid"><span class="titre--numero">02.</span>
           <svg class="titre--etoile titre--etoile-02" viewBox="0 0 595.28 595.28" xmlns="http://www.w3.org/2000/svg"><path d="m595.28 297.64a374.24 374.24 0 0 0 -297.64 297.64 374.24 374.24 0 0 0 -297.64-297.64 374.25 374.25 0 0 0 297.64-297.64 374.25 374.25 0 0 0 297.64 297.64z"/></svg>
           <span class="maxwidth">Je teste ma bière</span></h2>
         <input id="search" class="search-biere allgrid" type="search" placeholder="Choisi ta bière">
