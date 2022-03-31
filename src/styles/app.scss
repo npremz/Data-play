@@ -76,6 +76,7 @@ button {
 
 input {
     color: var(--color-text);
+    box-shadow: none;
 }
 
 
@@ -109,7 +110,7 @@ input:focus {
     left: 0;
     top: 0;
     background-color: var(--color-bg);
-    z-index: 1;
+    z-index: 9;
 
     &:after {
         content: "";

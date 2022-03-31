@@ -51,6 +51,10 @@ const burgerOpen = document.querySelector("#open");
 const burgerClose = document.querySelector("#close");
 const nav = document.querySelector(".nav");
 
+nav.addEventListener("blur", (e) => {
+    nav.classList.remove('left')
+}, true)
+
 const formulaireBarCat = document.querySelector(".formulaire-barcat");
 const btbarcat = document.querySelector("#btbarcat");
 
