@@ -1,6 +1,8 @@
 "use strict"
 
 import { gsap } from "gsap";
+import ScrollToPlugin from 'gsap/ScrollToPlugin';
+gsap.registerPlugin(ScrollToPlugin);
 
 console.log(gsap.version)
 
@@ -259,7 +261,7 @@ function addResults(biere, idNumber) {
 btrqr.addEventListener("click", (e) =>  {
     console.log(price_field.value);
     console.log(degre_field.value)
-    let prixAuLitre = (remplacer_virgule_par_point(price_field.value) / quantity_field.value) * 100
+    let prixAuLitre = (remplacer_virgule_par_point(price_field.value) / remplacer_virgule_par_point(quantity_field.value)) * 100
     let rqrcalculed = (remplacer_virgule_par_point(degre_field.value) / prixAuLitre) * 10
     if (isNaN(rqrcalculed) == false) {
         rqrResult.innerHTML = `RQR ${rqrcalculed.toFixed(1)}`
@@ -358,4 +360,40 @@ burgerOpen.addEventListener("click", (e) => {
 
 burgerClose.addEventListener("click", (e) => {
     nav.classList.remove("left")
+})
+
+search_field.addEventListener("click", (e) => {
+    gsap.to(window, {duration: 0.3, scrollTo: {y:"#search", offsetY: 150}});
+})
+
+function calculScroll() {
+    gsap.to(window, {duration: 0.3, scrollTo: {y:"#rqrresult", offsetY: 50}});
+}
+
+price_field.addEventListener("click", (e) => {
+    calculScroll()
+});
+
+quantity_field.addEventListener("click", (e) => {
+    calculScroll()
+});
+
+degre_field.addEventListener("click", (e) => {
+    calculScroll()
+});
+
+btBar.addEventListener("click", () => {
+    gsap.to(window, {duration: 0.3, scrollTo: {y:"#btbar", offsetY: 150}});
+})
+
+btrqr.addEventListener("click", () => {
+    gsap.to(window, {duration: 0.3, scrollTo: {y:"#calcul", offsetY: -50}});
+})
+
+btType.addEventListener("click", () => {
+    gsap.to(window, {duration: 0.3, scrollTo: {y:"#search", offsetY: 150}});
+})
+
+btbarcat.addEventListener("click", () => {
+    gsap.to(window, {duration: 0.3, scrollTo: {y:"#search", offsetY: 150}});
 })

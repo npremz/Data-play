@@ -9,6 +9,9 @@
     --color-text-offset: #f4f4f4;
     --color-primary: #212121;
     --color-secondary: #f4f4f4;
+    .stroke {
+        stroke: black;
+    }
 }
 @media(prefers-color-scheme: dark){
     :root {
@@ -19,6 +22,9 @@
         --color-primary: #212121;
         --color-secondary: #121212; 
     }
+    .stroke {
+        stroke: white;
+    }
 }
 [data-theme='light']{
     --color-bg: #f4f4f4;
@@ -27,6 +33,9 @@
     --color-text-offset: #f4f4f4;
     --color-primary: #212121;
     --color-secondary: #f4f4f4; 
+    .stroke {
+        stroke: black;
+    }
 }
 [data-theme='dark']{
     --color-bg: #121212;
@@ -35,18 +44,29 @@
     --color-text-offset: #121212;
     --color-primary: #212121;
     --color-secondary: #121212;
+    .stroke {
+        stroke: white;
+    }
+}
+
+html {
+    max-width: 100vw;
 }
 
 body {
     font-family: neue-haas-grotesk-text, sans-serif;
-    font-size: 16px;
+    font-size: 18px;
     line-height: 1.4;
     font-weight: 400;
     background-color: var(--color-bg);
     letter-spacing: 0.2px;
     color: var(--color-text);
     overflow-x: hidden;
-    max-width: 100%;
+    max-width: 100vw;
+}
+
+.overflow-hidden {
+    overflow: hidden;
 }
 
 button {
@@ -79,7 +99,6 @@ input {
     box-shadow: none;
 }
 
-
 input:focus {
     border: none;
 }
@@ -100,10 +119,11 @@ input:focus {
 /*     header        */
 
 .header {
+    width: 100vw;
     display: flex;
-    padding: 37px;
-    padding-top: 25px;
-    padding-bottom: 25px;
+    padding: 25px;
+    padding-top: 20px;
+    padding-bottom: 20px;
     justify-content: space-between;
     position: fixed;
     right: 0;
@@ -112,11 +132,15 @@ input:focus {
     background-color: var(--color-bg);
     z-index: 9;
 
+    a {
+        position: relative;
+    }
+
     &:after {
         content: "";
         position: absolute;
-        left: 37px;
-        right: 37px;
+        left: 25px;
+        right: 25px;
         height: 1px;
         background-color: var(--color-bg-offset);
         bottom: 0;
@@ -125,6 +149,14 @@ input:focus {
     &__logo {
         width: 100px;
         margin-top: 5px;
+        fill: var(--color-bg);
+    }
+
+    &__etoile {
+        position: absolute;
+        width: 20px;
+        left: 70%;
+        top: 10px;
     }
 
     &__burger-menu {
@@ -147,7 +179,7 @@ input:focus {
 /*     conteneurs      */
 
 .conteneur {
-    margin: 37px;
+    margin: 25px;
 }
 
 .nav {
@@ -192,32 +224,28 @@ input:focus {
 
 .boitemain {
     position: relative;
-    margin-top: 100vh;
+    padding-top: 14vh;
 }
 
 .main {
     position: relative;
-    margin-top: -360px;
 }
 
 .section {
     position: relative;
     padding-top: 130px;
 
-    &--premiere {
-        padding-top: 80px;
-    }
     &--intro {
         padding-top: 80px;
         margin-bottom: 57px;
     }
 
     &--02 {
-        margin-top: 210px;
+        margin-top: 80px;
     }
 
     &--03 {
-        margin-top: 180px;
+        margin-top: 80px;
         margin-bottom: 380px;
     }
 }
@@ -265,16 +293,16 @@ input:focus {
     margin: 0;
 
     &--principal {
-        font-size: 46px;
-        line-height: 45px;
-        letter-spacing: -0.10px;
+        font-size: 45px;
+        line-height: 50px;
+        letter-spacing: 0.15px;
         font-weight: 500;
     }
 
     &--soustitreprincipal {
-        font-size: 16px;
+        font-size: 20px;
         font-weight: 600;
-        margin-top: 37px;
+        margin-top: 60px;
     }
 
     &--secondaire {
@@ -291,6 +319,9 @@ input:focus {
             right: 0;
             display: block;
             max-width: 210px;
+        }
+        .maxwidth--last {
+            max-width: 250px;
         }
     }
 
@@ -329,7 +360,7 @@ input:focus {
     }
 
     &--etoile-04 {
-        right: 135px;
+        right: 255px;
     }
 
     &--etoile-05 {
@@ -363,7 +394,7 @@ input:focus {
 
     &--intro{
         font-size: 14px;
-        margin-top: 5px;
+        margin-top: 12px;
     }
 }
 
@@ -376,6 +407,14 @@ input:focus {
     margin-top: 10px;
     width: 120%;
     margin-left: -10%;
+
+    &--calcul {
+        margin-top: 250px;
+    }
+
+    &--outils-02 {
+        margin-top: -30px;
+    }
 }
 
 .result {
@@ -395,11 +434,12 @@ input:focus {
     text-align: center;
     position: relative;
     left: 50%;
-    width: 200px;
-    margin-left: -100px;
-    font-size: 16px;
-    border-bottom: solid var(--color-bg-offset) 1px;
-    padding-bottom: 4px;
+    width: 80vw;
+    transform: translateX(-50%);
+    font-size: 28px;
+    border: solid var(--color-bg-offset) 1px;
+    padding-bottom: 10px;
+    padding-top: 10px;
 }
 
 /*****************************/
@@ -409,8 +449,7 @@ input:focus {
     display: block;
     padding: 8px;
     text-transform: uppercase;
-    font-size: 14px;
-    border-radius: 16px;
+    font-size: 20px;
     border: solid var(--color-bg-offset) 1px;
     position: relative;
     letter-spacing: 1px;
@@ -424,6 +463,10 @@ input:focus {
 
     &--bar:after {
         content: " +";
+    }
+
+    &--validation {
+        margin-top: 25px;
     }
 }
 
@@ -548,11 +591,13 @@ input:focus {
     position: absolute;
 
     &--intro {
-        transform: scaleX(-1);
-        right: 0;
+        top: 170px;
+        left: 0;
     }
 
     &--last {
+        top: 800px;
+        left: auto;
         right: 5%;
     }
 }
@@ -592,7 +637,7 @@ input:focus {
 .boitecategorie {
     position: relative;
     display: flex;
-    margin-top: 10px;
+    margin-top: 30px;
     max-width: 200px;
     left: 50%;
     transform: translateX(-50%);
@@ -618,14 +663,13 @@ input:focus {
     display: flex;
     width: 100%;
     justify-content: space-between;
-    margin-top: 100px;
+    font-size: 20px;
 
     .info-biere {
-        width: 90px;
+        width: 105px;
         background-color: transparent;
-        border: none;
-        border-bottom: solid var(--color-bg-offset) 1px;
-        padding-bottom: 3px;
+        border: solid var(--color-bg-offset) 1px;
+        padding: 8px;
         color: var(--color-text);
     }
 
@@ -633,9 +677,11 @@ input:focus {
         position: relative;
 
         .unite {
+            font-size: 20px;
             position: absolute;
             color: rgb(202, 202, 202);
-            right: 2px;
+            right: 7px;
+            top: 7px;
         }
     }
 }
@@ -648,8 +694,8 @@ input:focus {
     height: 517px;
     overflow-x: scroll;
     overflow-y: hidden;
-    width: calc(100% + 74px);
-    margin-left: -37px;
+    width: calc(100% + 50px);
+    margin-left: -25px;
     margin-top: 15px;
 
     .results {
@@ -734,6 +780,10 @@ input:focus {
     }
 }
 
+.boiteinput {
+    margin-top: 150px;
+}
+
 /* dark mode button */
 
 .darkmode{
@@ -809,6 +859,17 @@ body[data-theme='dark'] .light-mode-button span:nth-child(2) {
         max-width: 500px;
         margin-left: auto;
         margin-right: auto;
+        
+    }
+
+    .header {
+        padding-left: 49px;
+        padding-right: 49px;
+
+        &:after {
+            left: 49px;
+            right: 49px;
+        }
     }
 
     .rqr--outils {
@@ -831,6 +892,15 @@ body[data-theme='dark'] .light-mode-button span:nth-child(2) {
     }
 
     .header {
+
+
+        padding-left: 49px;
+        padding-right: 49px;
+
+        &:after {
+            left: 49px;
+            right: 49px;
+        }
 
         &__burger-menu {
             display: none;
@@ -857,7 +927,7 @@ body[data-theme='dark'] .light-mode-button span:nth-child(2) {
     }
 
     .main {
-        margin-top: -500px;
+        margin-top: 0px;
     }
     .section {
         display: grid;
@@ -871,7 +941,7 @@ body[data-theme='dark'] .light-mode-button span:nth-child(2) {
         }
 
         &--02 {
-            margin-top: 350px;
+            margin-top: 110px;
         }
 
         &--03 {
@@ -890,18 +960,18 @@ body[data-theme='dark'] .light-mode-button span:nth-child(2) {
     .titre {
     
         &--principal {
-            font-size: 6.9vw;
+            font-size: 5.87vw;
             line-height: 143px;
             letter-spacing: -0.12px;
         }
     
         &--soustitreprincipal {
-            margin-top: -45px;
-            font-size: 22px;
+            margin-top: -112px;
+            font-size: 33px;
         }
     
         &--secondaire {
-            font-size: 5.5vw;
+            font-size: 61px;
             padding-bottom: 10px;
 
             .maxwidth {
@@ -975,12 +1045,12 @@ body[data-theme='dark'] .light-mode-button span:nth-child(2) {
 
         &--calcul {
             height: 700px;
-            transform: translate(-135%, 36%);
+            transform: translate(-135%, 6%);
         }
 
         &--last {
             height: 600px;
-            transform: translate(25%, 120%);
+            transform: translate(25%, -70%);
             left: 50%;
 
         }
@@ -1013,8 +1083,8 @@ body[data-theme='dark'] .light-mode-button span:nth-child(2) {
         }
 
         &--outils-02 {
-            text-align: center;
-            margin-top: 10px;
+            text-align: left;
+            margin-top: -70px;
         }
     }
 
@@ -1024,37 +1094,52 @@ body[data-theme='dark'] .light-mode-button span:nth-child(2) {
         margin-top: 100px;
         text-align: left;
         position: relative;
-        left: 0;
+        left: 50%;
         width: 100%;
-        margin-left: 0;
+        transform: translateX(-50%);
         font-size: 35px;
-        border-bottom: solid var(--color-bg-offset) 1px;
+        border: solid var(--color-bg-offset) 1px;
         padding-bottom: 10px;
-        padding-left: 10px;
+        padding-left: 20px;
     }
 
     /*************************************************/
     /* bouton */
 
     .bouton {
-        padding: 8px;
+        padding: 10px;
         text-transform: uppercase;
-        font-size: 14px;
-        border-radius: 17px;
-        height: 32px;
+        font-size: 22px;
         letter-spacing: 1px;
-        left: 50%;
-        transform: translateX(none);
-        margin-top: -60px;
-        width: 200px;
+        left: 0%;
+        transform: translateX(0);
+        width: 250px;
 
         &--bar {
-            width: 200px;
+            width: 300px;
+        }
+        &--validation {
+            margin-top: -20px;
         }
     }
 
  /*************************************************/
     /* Boite */
+
+    .boitecalcul {
+        margin-top: -80px;
+        justify-content: flex-start;
+
+        .info-biere {
+            margin-right: 25px;
+        }
+
+        .boitecalculinfo{
+            .unite {
+                right: 35px;
+            }
+        }
+    }
 
     .formulaire-type {
         transform: translateX(0);
@@ -1066,6 +1151,15 @@ body[data-theme='dark'] .light-mode-button span:nth-child(2) {
         transform: translateX(0);
         right: -20px;
         left: auto;
+    }
+
+    .boiteinput {
+        position: relative;
+    }
+
+    .formulaire-bar {
+        left: 0;
+        transform: translate(0);
     }
 
     .boitevideo {
@@ -1094,7 +1188,7 @@ body[data-theme='dark'] .light-mode-button span:nth-child(2) {
 
     .boitecategorie {
         display: flex;
-        margin-top: -30px;
+        margin-top: -40px;
         justify-content: flex-end;
         right: 0;
         left: 0;
@@ -1164,8 +1258,23 @@ body[data-theme='dark'] .light-mode-button span:nth-child(2) {
         grid-column-end: 8;
     }
 
+    .grid_7_9 {
+        grid-column-start: 7;
+        grid-column-end: 9;
+    }
+
+    .grid_2_-1 {
+        grid-column-start: 2;
+        grid-column-end: -1;
+    }
+
     .grid_6_-1 {
         grid-column-start: 6;
+        grid-column-end: -1;
+    }
+
+    .grid_7_-1 {
+        grid-column-start: 7;
         grid-column-end: -1;
     }
 
@@ -1177,72 +1286,7 @@ body[data-theme='dark'] .light-mode-button span:nth-child(2) {
 
 
 @media (min-width: 1450px) {
-    body {
-        font-family: neue-haas-grotesk-text, sans-serif;
-        font-size: 18px;
-    }
 
-    /**********************************/
-    /* Conteneurs */
-
-    .conteneur {
-        max-width: none;
-        margin: 49px;
-    }
-
-    .header {
-
-        &__burger-menu {
-            display: none;
-        }
-
-        .menu {
-            .nav__liste {
-                flex-direction: row;
-
-                .nav__liens {
-                    font-size: 12px;
-                    margin-left: 30px;
-                    padding: 0;
-                }
-
-                button {
-                    margin-top: 0;
-                    margin-left: 25px;
-                }
-            }
-
-            
-        }
-    }
-
-    .main {
-        margin-top: -500px;
-    }
-    .section {
-        display: grid;
-        grid-template-columns: repeat(9, 1fr);
-        grid-auto-flow: row;
-        grid-column-gap: 35px;
-        margin-top: 100px;
-
-        &--premiere {
-            padding-top: 150px;
-        }
-
-        &--02 {
-            margin-top: 350px;
-        }
-
-        &--03 {
-            margin-bottom: 400px;
-        }
-    }
-
-    .footer {
-        padding-top: 49px;
-        
-    }
 
     /***************************************/
     /*  titres */
@@ -1250,18 +1294,19 @@ body[data-theme='dark'] .light-mode-button span:nth-child(2) {
     .titre {
     
         &--principal {
-            font-size: 6.9vw;
+            font-size: 5.87vw;
             line-height: 143px;
             letter-spacing: -0.12px;
         }
     
         &--soustitreprincipal {
-            margin-top: -45px;
-            font-size: 22px;
+            margin-top: -122px;
+            font-size: 33px;
+            max-width: 450px;
         }
     
         &--secondaire {
-            font-size: 80px;
+            font-size: 61px;
             padding-bottom: 10px;
 
             .maxwidth {
@@ -1272,7 +1317,7 @@ body[data-theme='dark'] .light-mode-button span:nth-child(2) {
         }
     
         &--numero {
-            font-size: 80px;
+            font-size: 61px;
             left: 0;
             margin-top: -55px;
         }
@@ -1288,30 +1333,25 @@ body[data-theme='dark'] .light-mode-button span:nth-child(2) {
         &--etoile {
             height: 39px;
             width: 39px;
-            margin-top: -70px;
-            right: 1085px;
+            margin-top: -85px;
             display: block;
         }
     
         &--etoile-02 {
-            right: 740px;
+            right: 580px;
         }
     
         &--etoile-03 {
-            right: 1165px;
+            right: 920px;
         }
     
         &--etoile-04 {
-            right: 915px;
-        }
-    
-        &--etoile-05 {
-            right: 1320px;
+            right: 720px;
         }
     
         &--secondaire:before {
             top: auto;
-            bottom: 0;
+            bottom: 10px;
         }
         
         &--footer {
@@ -1323,96 +1363,24 @@ body[data-theme='dark'] .light-mode-button span:nth-child(2) {
     }
 
     /*****************************/
-    /*     image    */
-
-    .image {
-        height: 600px;
-
-        &--intro {
-            left: 50%;
-            transform: translate(-135%, 40%);
-        }
-
-        &--calcul {
-            height: 700px;
-            transform: translate(-135%, 36%);
-        }
-
-        &--last {
-            height: 600px;
-            transform: translate(-25%, 120%);
-            left: auto;
-        }
-            
-        }
-
-
-    /*****************************/
     /*     paragraphe    */
 
     .paragraphe {
 
         &--intro{
-            font-size: 15px;
-            margin-top: 5px;
+            font-size: 22px;
+            margin-top: -15px;
+            max-width: 430px;
         }
 
-        &--thin {
-            width: 95%;
-        }
     }
 
     .rqr {
         font-size: 450px;
-
-        &--outils {
-            letter-spacing: -0.20px;
-            text-align: left;
-            width: auto;
-            margin-left: 0;
-            margin-top: -75px;
-        }
-
-        &--outils-02 {
-            text-align: center;
-            margin-top: 10px;
-        }
-    }
-
-    .search-biere {
-        background-color: transparent;
-        border: none;
-        margin-top: 100px;
-        text-align: left;
-        position: relative;
-        left: 0;
-        width: 100%;
-        margin-left: 0;
-        font-size: 35px;
-        border-bottom: solid var(--color-bg-offset) 1px;
-        padding-bottom: 10px;
-        padding-left: 10px;
     }
 
     /*************************************************/
     /* bouton */
-
-    .bouton {
-        padding: 8px;
-        text-transform: uppercase;
-        font-size: 14px;
-        border-radius: 17px;
-        height: 32px;
-        letter-spacing: 1px;
-        left: 50%;
-        transform: translateX(none);
-        margin-top: -60px;
-        width: 200px;
-
-        &--bar {
-            width: 200px;
-        }
-    }
 
  /*************************************************/
     /* Boite */
@@ -1453,23 +1421,6 @@ body[data-theme='dark'] .light-mode-button span:nth-child(2) {
         display: block;
     }
 
-    .boitecategorie {
-        display: flex;
-        margin-top: -30px;
-        justify-content: flex-end;
-        right: 0;
-        left: 0;
-        max-width: none;
-        transform: translateX(0);
-        
-        .bouton--categorie {
-            margin-right: 30px;
-            font-size: 12px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-    }
-
     .result {
         margin-top: 5px;
         margin-bottom: 37px;
@@ -1486,4 +1437,5 @@ body[data-theme='dark'] .light-mode-button span:nth-child(2) {
         margin-top: 0px;
     }
 }
+
 
